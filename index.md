@@ -3,9 +3,7 @@ title: Home
 layout: home
 ---
 
-<div class="container">
-
-## The Stellar Stoat
+# The Stellar Stoat
 
 Portfolio Page in progress.
 
@@ -53,10 +51,6 @@ Arrangement and Scoring of a Zelda Animatic
 
 ---
 
-</div>
-
----
-
 ## Reserved
 
 <div class="card">
@@ -72,21 +66,21 @@ Reserved Space.
 <div class="grid">
 
 <div class="card">
-- People  
-- Places  
-- Things  
-- Ideas  
+People  
+Places  
+Things  
+Ideas  
 </div>
 
 <div class="card">
-- Mustelids  
-- Cheese Crackers  
-- Maybe some Wine or Mead  
+Mustelids  
+Cheese Crackers  
+Maybe some Wine or Mead  
 </div>
 
 <div class="card">
-- You know I could do with a nice crustini instead of crackers.  
-- Pickles are nice.  
+You know I could do with a nice crustini instead of crackers.  
+Pickles are nice.  
 </div>
 
 </div>
@@ -100,7 +94,5 @@ Reserved Space.
 - GitHub: https://github.com/trenthian  
 - LinkedIn: https://linktr.ee/trenthian  
 - Email: No  
-
-</div>
 
 </div>
