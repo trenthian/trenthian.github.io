@@ -42,7 +42,7 @@
 </main>
 
 <!-- =========================
-     HOVER SOUND
+     AUDIO (UI SOUND)
 ========================= -->
 <audio id="uiSound" preload="auto">
   <source src="https://assets.mixkit.co/active_storage/sfx/2571/2571-preview.mp3" type="audio/mpeg">
@@ -51,38 +51,29 @@
 <!-- =========================
      SCRIPTS
 ========================= -->
-document.querySelectorAll(".video-item").forEach(item => {
-  item.addEventListener("click", () => {
-    const videoId = item.getAttribute("data-video");
-
-    const iframe = document.getElementById("mainVideo");
-
-    iframe.src = `https://www.youtube.com/embed/${videoId}`;
-  });
-});
 <script>
-/* =========================
-   THEME TOGGLE
-========================= */
-const btn = document.getElementById("themeToggle");
 
-btn.addEventListener("click", () => {
+/* =========================
+   THEME TOGGLE (SAVE + LOAD)
+========================= */
+const themeBtn = document.getElementById("themeToggle");
+
+themeBtn?.addEventListener("click", () => {
   document.body.classList.toggle("slate");
 
-  if (document.body.classList.contains("slate")) {
-    localStorage.setItem("theme", "slate");
-  } else {
-    localStorage.setItem("theme", "dark");
-  }
+  localStorage.setItem(
+    "theme",
+    document.body.classList.contains("slate") ? "slate" : "dark"
+  );
 });
 
-// load saved theme
+// restore theme
 if (localStorage.getItem("theme") === "slate") {
   document.body.classList.add("slate");
 }
 
 /* =========================
-   HOVER GLOW TRACKING
+   HOVER GLOW SYSTEM
 ========================= */
 document.querySelectorAll('.card').forEach(card => {
   card.addEventListener('mousemove', e => {
@@ -93,7 +84,7 @@ document.querySelectorAll('.card').forEach(card => {
 });
 
 /* =========================
-   HOVER SOUND (THROTTLED)
+   SOUND SYSTEM (THROTTLED)
 ========================= */
 const sound = document.getElementById("uiSound");
 let lastPlay = 0;
@@ -109,6 +100,44 @@ document.querySelectorAll(".card").forEach(card => {
     }
   });
 });
+
+/* =========================
+   VIDEO SYSTEM (THUMBNAILS + SWITCHING)
+========================= */
+const iframe = document.getElementById("mainVideo");
+const items = document.querySelectorAll(".video-item");
+
+function setActive(el) {
+  items.forEach(i => i.classList.remove("active"));
+  el.classList.add("active");
+}
+
+items.forEach(item => {
+
+  const id = item.getAttribute("data-video");
+
+  /* build thumbnail */
+  const img = document.createElement("img");
+  img.src = `https://img.youtube.com/vi/${id}/hqdefault.jpg`;
+  item.appendChild(img);
+
+  /* click to switch video */
+  item.addEventListener("click", () => {
+    if (iframe) {
+      iframe.src = `https://www.youtube.com/embed/${id}`;
+    }
+
+    setActive(item);
+
+    /* click sound */
+    if (sound) {
+      sound.currentTime = 0;
+      sound.volume = 0.25;
+      sound.play();
+    }
+  });
+});
+
 </script>
 
 </body>
