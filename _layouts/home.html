@@ -41,16 +41,7 @@ const themeBtn = document.getElementById("themeToggle");
 
 themeBtn?.addEventListener("click", () => {
   document.body.classList.toggle("slate");
-
-  localStorage.setItem(
-    "theme",
-    document.body.classList.contains("slate") ? "slate" : "dark"
-  );
 });
-
-if (localStorage.getItem("theme") === "slate") {
-  document.body.classList.add("slate");
-}
 
 /* =========================
    HOVER GLOW
@@ -74,7 +65,7 @@ let last = 0;
 document.querySelectorAll(".card").forEach(card => {
   card.addEventListener("mouseenter", () => {
     const now = Date.now();
-    if (now - last > 120) {
+    if (sound && now - last > 120) {
       sound.currentTime = 0;
       sound.volume = 0.25;
       sound.play();
@@ -84,7 +75,7 @@ document.querySelectorAll(".card").forEach(card => {
 });
 
 /* =========================
-   YOUTUBE RSS PLAYLIST (NO API)
+   VIDEO SYSTEM
 ========================= */
 
 const PLAYLIST_ID = "PLYIsLLpWMRZU";
@@ -102,14 +93,13 @@ fetch(feed)
     let first = null;
 
     entries.forEach(entry => {
-      const videoId = entry.querySelector("yt\\:videoId").textContent;
-      const title = entry.querySelector("title").textContent;
+      const videoId = entry.querySelector("yt\\:videoId")?.textContent;
+      if (!videoId) return;
 
       if (!first) first = videoId;
 
       const item = document.createElement("div");
       item.className = "video-item";
-      item.dataset.video = videoId;
 
       item.innerHTML = `
         <img src="https://img.youtube.com/vi/${videoId}/hqdefault.jpg">
@@ -135,7 +125,7 @@ fetch(feed)
 
     if (first) {
       iframe.src = `https://www.youtube.com/embed/${first}`;
-      playlistEl.firstChild.classList.add("active");
+      playlistEl.firstChild?.classList.add("active");
     }
   });
 
