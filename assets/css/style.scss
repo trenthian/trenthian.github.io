@@ -2,11 +2,24 @@
 ---
 
 /* =========================
+   GLOBAL FIX (IMPORTANT)
+   Prevents edge-touching anywhere
+========================= */
+
+* {
+  box-sizing: border-box;
+}
+
+/* =========================
    BASE
 ========================= */
 
 body {
   margin: 0;
+
+  /* 👇 REAL FIX: ensures page never touches screen edges */
+  padding: 0 36px;
+
   font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
   background: #0b0f17;
   color: #e6e6e6;
@@ -15,21 +28,20 @@ body {
 
 /* =========================
    MAIN LAYOUT CONTAINER
-   (≈ ½ inch screen margin feel)
 ========================= */
 
 .container {
   max-width: 960px;
   margin: 0 auto;
 
-  /* desktop spacing */
-  padding: 64px 36px;
+  /* vertical spacing only now */
+  padding: 24px 0;
 }
 
 /* mobile spacing fix */
 @media (max-width: 600px) {
-  .container {
-    padding: 28px 16px;
+  body {
+    padding: 0 16px;
   }
 }
 
