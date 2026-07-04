@@ -42,27 +42,24 @@ New, Fresh and Complete Ideas
 
 <div class="video-system">
 
-  <!-- MAIN PLAYER -->
+  <!-- MAIN PLAYER (playlist mode) -->
   <div class="card video">
-    <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:12px;">
-      <iframe
-        id="mainVideo"
-        src="https://www.youtube.com/embed/ypbA6h2ZgyQ"
-        style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
-        allowfullscreen>
-      </iframe>
-    </div>
+
+    <iframe
+      id="mainVideo"
+      src="https://www.youtube.com/embed/videoseries?list=YOUR_PLAYLIST_ID"
+      style="width:100%;aspect-ratio:16/9;border:0;border-radius:12px;"
+      allowfullscreen>
+    </iframe>
+
   </div>
 
   <!-- PLAYLIST -->
-  <div class="video-playlist" id="videoPlaylist">
+  <div class="video-playlist">
 
-    <!-- thumbnails auto-enhanced by JS -->
-    <div class="video-item active" data-video="ypbA6h2ZgyQ" data-title="Zelda Animatic"></div>
-
-    <div class="video-item" data-video="dQw4w9WgXcQ" data-title="Sample Video 2"></div>
-
-    <div class="video-item" data-video="M7lc1UVf-VE" data-title="Sample Video 3"></div>
+    <div class="video-item active" data-video="VIDEO_ID_1"></div>
+    <div class="video-item" data-video="VIDEO_ID_2"></div>
+    <div class="video-item" data-video="VIDEO_ID_3"></div>
 
   </div>
 
