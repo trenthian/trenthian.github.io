@@ -51,7 +51,15 @@
 <!-- =========================
      SCRIPTS
 ========================= -->
+document.querySelectorAll(".video-item").forEach(item => {
+  item.addEventListener("click", () => {
+    const videoId = item.getAttribute("data-video");
 
+    const iframe = document.getElementById("mainVideo");
+
+    iframe.src = `https://www.youtube.com/embed/${videoId}`;
+  });
+});
 <script>
 /* =========================
    THEME TOGGLE
