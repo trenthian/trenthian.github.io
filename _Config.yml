@@ -5,13 +5,9 @@ baseurl: ""
 
 theme: jekyll-theme-hacker
 
-color_scheme: dark
-
 search_enabled: true
-
-nav_sort: case_insensitive
 
 footer_content: "&copy; 2026 Stoat"
 
 plugins:
-  - jekyll-remote-theme
+  - jekyll-feed
