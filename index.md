@@ -15,18 +15,23 @@ Portfolio Page in progress.
 
 I'm a developer interested in:
 
+<div class="grid">
+  
 <div class="card">
-
 Game Design <br>
 UX * Gameplay Design * Story and Scenario Writing
+</div>
 
+<div class="card">
 Music and Audio <br>
 Writing * Arranging * Production * Sound Design/Foley  
-  
+</div>
+
+<div class="card">
 Direction <br>
 Sound and Video * Experience * 
 New Fresh and Complete Ideas  
-
+</div>
 </div>
 
 ---
