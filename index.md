@@ -43,8 +43,7 @@ New, Fresh and Complete Ideas
 <div class="video-system">
 
   <!-- MAIN PLAYER -->
-  <div class="card video" id="mainVideoCard">
-
+  <div class="card video">
     <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:12px;">
       <iframe
         id="mainVideo"
@@ -53,23 +52,17 @@ New, Fresh and Complete Ideas
         allowfullscreen>
       </iframe>
     </div>
-
   </div>
 
-  <!-- PLAYLIST BAR -->
-  <div class="video-playlist">
+  <!-- PLAYLIST -->
+  <div class="video-playlist" id="videoPlaylist">
 
-    <div class="video-item" data-video="ypbA6h2ZgyQ">
-      🎵 Zelda Animatic Main
-    </div>
+    <!-- thumbnails auto-enhanced by JS -->
+    <div class="video-item active" data-video="ypbA6h2ZgyQ" data-title="Zelda Animatic"></div>
 
-    <div class="video-item" data-video="dQw4w9WgXcQ">
-      🎬 Sample Video 2
-    </div>
+    <div class="video-item" data-video="dQw4w9WgXcQ" data-title="Sample Video 2"></div>
 
-    <div class="video-item" data-video="M7lc1UVf-VE">
-      🎮 Sample Video 3
-    </div>
+    <div class="video-item" data-video="M7lc1UVf-VE" data-title="Sample Video 3"></div>
 
   </div>
 
