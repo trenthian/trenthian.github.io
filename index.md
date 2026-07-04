@@ -24,17 +24,11 @@ I'm a developer interested in:
 
 ## Featured Projects
 
-### Project One
-A short description of your project.
+### Youtube
+Arrangement and Scoring of a Zelda Animatic
 ## Featured Video
 
-<iframe
-    width="560"
-    height="315"
-    src="https://www.youtube.com/embed/ypbA6h2ZgyQ"
-    title="YouTube video player"
-    allowfullscreen>
-</iframe>
+
 <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:12px;">
 <iframe
   width="800"
@@ -46,10 +40,9 @@ A short description of your project.
 </iframe>
 </div>
 
-### Project Two
-A short description of your project.
+### Reserved
+Reserved Space.
 
-- GitHub: https://github.com/yourusername/project2
 
 ## Skills
 
