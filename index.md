@@ -17,32 +17,35 @@ I'm a developer interested in:
 
 <div class="card">
 Game Design<br>
-UX · Gameplay Design · Story and Scenario Writing
+UX · Gameplay Design<br>
+Story and Scenario Writing
 </div>
 
 <div class="card">
 Music and Audio<br>
-Writing · Arranging · Production · Sound Design / Foley
+Writing · Arranging · Production<br> 
+Sound Design / Foley
 </div>
 
 <div class="card">
 Direction<br>
-Sound and Video Experience<br>
-New Fresh and Complete Ideas
+Sound and Video<br>
+Scenario<br>
+New, Fresh and Complete Ideas
 </div>
 
 </div>
 
 ---
 
-## Featured Project
+## Featured Work/s
 
 ### YouTube  
 Arrangement and Scoring of a Zelda Animatic
 
 <div class="card">
 
-## Featured Video
+Legend of Zelda: Well Excuse Me Stalfos.
 
 <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:12px;">
   <iframe
@@ -69,15 +72,13 @@ Reserved Space.
 <div class="grid">
 
 <div class="card">
-People<br>
-Places<br>
-Things<br>
-Ideas and Noodles
+People · Places · Things· Ideas<br> 
+and also Noodles
 </div>
 
 <div class="card">
 Mustelids<br>
-Cheese Crackers<br>
+Cheese and Crackers<br>
 Maybe some Wine or Mead
 </div>
 
@@ -95,7 +96,7 @@ Pickles are nice.
 <div class="card">
 
 - GitHub: https://github.com/trenthian  
-- LinkedIn: https://linktr.ee/trenthian  
-- Email: No  
+- Linktree: https://linktr.ee/trenthian  
+- Email: Nothanks  
 
 </div>
