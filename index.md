@@ -21,7 +21,7 @@ I'm a developer interested in:
 - UX  
 - Gameplay Design  
 - Story and Scenario Writing  
-- Video Editing  
+- Video  
 - Direction  
 - New Fresh and Complete Ideas  
 
