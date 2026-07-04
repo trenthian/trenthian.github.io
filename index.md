@@ -1,104 +1,62 @@
 ---
 title: Home
-layout: home
+layout: default
 ---
 
-# The Stellar Stoat
+<section id="about" class="section">
+  <h1>About Me</h1>
 
-Portfolio page in progress.
+  <div class="card">
+    <p>
+      Portfolio developer focused on interactive systems, design, and multimedia experiences.
+    </p>
+  </div>
+</section>
 
----
+<section id="videos" class="section">
+  <h2>Featured Video</h2>
 
-## About Me
-{: #about}
-
-I'm a developer interested in systems that combine design, interaction, and narrative structure.
-
-<div class="grid">
-
-<div class="card">
-Game Design<br>
-UX · Gameplay Design<br>
-Story and Scenario Writing
-</div>
-
-<div class="card">
-Music and Audio<br>
-Writing · Arranging · Production<br>
-Sound Design / Foley
-</div>
-
-<div class="card">
-Direction<br>
-Sound and Video<br>
-System-driven creative work
-</div>
-
-</div>
-
----
-
-## Featured Video
-{: #featured-video}
-
-<div class="video-system">
-
-  <div class="card video">
+  <div class="card video-wrapper">
     <iframe
       id="mainVideo"
       src="https://www.youtube.com/embed/ypbA6h2ZgyQ"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
       allowfullscreen>
     </iframe>
   </div>
 
-  <div class="video-playlist" id="videoPlaylist"></div>
+  <div class="video-strip" id="videoStrip"></div>
+</section>
 
-</div>
+<section id="skills" class="section">
+  <h2>Skills</h2>
 
----
+  <div class="grid">
 
-## Skills
-{: #skills}
+    <div class="card">Game Design</div>
+    <div class="card">UX / UI</div>
+    <div class="card">Audio Design</div>
+    <div class="card">Programming</div>
 
-<div class="grid">
+  </div>
+</section>
 
-<div class="card">
-People · Places · Systems · Ideas
-</div>
+<section id="projects" class="section">
+  <h2>Projects</h2>
 
-<div class="card">
-Design Thinking<br>
-Interaction Systems<br>
-Prototyping
-</div>
+  <div class="grid">
 
-<div class="card">
-Audio · Visual · Narrative<br>
-Cross-domain integration
-</div>
+    <div class="card">Project One</div>
+    <div class="card">Project Two</div>
+    <div class="card">Project Three</div>
 
-</div>
+  </div>
+</section>
 
----
+<section id="contact" class="section">
+  <h2>Contact</h2>
 
-## Reserved Space
-
-<div class="card">
-Reserved Space
-</div>
-
----
-
-## Contact
-{: #contact}
-
-<div class="card">
-
-<ul>
-  <li>GitHub: https://github.com/trenthian</li>
-  <li>Linktree: https://linktr.ee/trenthian</li>
-  <li>Email: Nothanks</li>
-</ul>
-
-</div>
+  <div class="card">
+    <p>Email: example@email.com</p>
+    <p>GitHub: github.com/yourname</p>
+  </div>
+</section>
