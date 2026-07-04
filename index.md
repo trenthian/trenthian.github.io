@@ -26,7 +26,15 @@ I'm a developer interested in:
 
 ### Project One
 A short description of your project.
+## Featured Video
 
+<iframe
+    width="560"
+    height="315"
+    src="https://www.youtube.com/embed/ypbA6h2ZgyQ"
+    title="YouTube video player"
+    allowfullscreen>
+</iframe>
 <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:12px;">
 <iframe
   width="800"
