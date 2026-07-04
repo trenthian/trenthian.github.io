@@ -1,13 +1,8 @@
 title: The Stellar Stoat
-description: Trinkets Cache
+description: Portfolio site
 
-url: "https://trenthian.github.io"
 baseurl: ""
-
-markdown: kramdown
-
-plugins:
-  - jekyll-feed
+url: "https://trenthian.github.io"
 
 sass:
   style: compressed
