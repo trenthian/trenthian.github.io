@@ -30,7 +30,6 @@ Sound Design / Foley
 <div class="card">
 Direction<br>
 Sound and Video<br>
-Scenario Writing<br>
 New, Fresh and Complete Ideas
 </div>
 
@@ -42,28 +41,20 @@ New, Fresh and Complete Ideas
 
 <div class="video-system">
 
-  <!-- MAIN PLAYER (playlist mode) -->
+  <!-- MAIN PLAYER -->
   <div class="card video">
-
     <iframe
       id="mainVideo"
-      src="https://www.youtube.com/embed/videoseries?list=PLYIsLLpWMRZU"
       style="width:100%;aspect-ratio:16/9;border:0;border-radius:12px;"
       allowfullscreen>
     </iframe>
-
   </div>
 
-  <!-- PLAYLIST -->
-  <div class="video-playlist">
-
-    <div class="video-item active" data-video="VIDEO_ID_1"></div>
-    <div class="video-item" data-video="VIDEO_ID_2"></div>
-    <div class="video-item" data-video="VIDEO_ID_3"></div>
-
-  </div>
+  <!-- PLAYLIST (AUTO LOADED) -->
+  <div class="video-playlist" id="videoPlaylist"></div>
 
 </div>
+
 ---
 
 ## Reserved
@@ -79,19 +70,17 @@ Reserved Space
 <div class="grid">
 
 <div class="card">
-People · Places · Things · Ideas<br>
-and also Noodles
+People · Places · Things · Ideas
 </div>
 
 <div class="card">
 Mustelids<br>
-Cheese and Crackers<br>
-Maybe some Wine or Mead
+Cheese Crackers<br>
+Wine or Mead
 </div>
 
 <div class="card">
-Crustini would be nice instead of crackers<br>
-Pickles are nice
+Crustini · Pickles · Ideas
 </div>
 
 </div>
