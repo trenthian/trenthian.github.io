@@ -1,0 +1,76 @@
+---
+---
+
+/* Background + base text */
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  background: #0d0f14;
+  color: #e6e6e6;
+  line-height: 1.6;
+}
+
+/* Layout */
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+/* Headings */
+h1, h2, h3 {
+  color: #ffffff;
+}
+
+/* Links */
+a {
+  color: #6ea8fe;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Hero section */
+.hero {
+  padding: 60px 0;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  color: #9aa4b2;
+  font-size: 1.2rem;
+}
+
+/* Project cards */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.card {
+  background: #151925;
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid #232838;
+  transition: 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: #3b82f6;
+}
+
+/* Footer */
+footer {
+  margin-top: 60px;
+  color: #6b7280;
+  font-size: 0.9rem;
+}
