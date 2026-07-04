@@ -5,15 +5,15 @@ layout: home
 
 <div class="container">
 
-# The Stellar Stoat
+# The Stellar Stoat  
 
-Portfolio Page in progress.
+Portfolio Page in progress.  
 
----
+---  
 
-## About Me
+## About Me  
 
-I'm a developer interested in:
+I'm a developer interested in:  
 
 - Game Design  
 - Music Production  
