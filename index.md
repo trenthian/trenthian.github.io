@@ -3,6 +3,8 @@ title: Home
 layout: home
 ---
 
+<div class="container">
+
 # The Stellar Stoat
 
 Portfolio Page in progress.
@@ -94,5 +96,7 @@ Pickles are nice.
 - GitHub: https://github.com/trenthian  
 - LinkedIn: https://linktr.ee/trenthian  
 - Email: No  
+
+</div>
 
 </div>
