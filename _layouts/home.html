@@ -1,4 +1,60 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>{{ page.title }}</title>
+
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+
+</head>
+
+<body>
+
+<!-- =========================
+     STICKY NAV
+========================= -->
+<div class="nav">
+  <a href="#top">Home</a>
+  <a href="#about">About</a>
+  <a href="#projects">Projects</a>
+  <a href="#contact">Contact</a>
+</div>
+
+<!-- =========================
+     MAIN CONTENT WRAPPER
+     (THIS FIXES ALL HEADING / LAYOUT ISSUES)
+========================= -->
+<main class="container" id="top">
+
+  {{ content }}
+
+</main>
+
+<!-- =========================
+     SCROLL REVEAL ANIMATION
+========================= -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const cards = document.querySelectorAll('.card');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, {
+    threshold: 0.1
+  });
+
+  cards.forEach(card => observer.observe(card));
+});
+</script>
+
+</body>
+</html><!DOCTYPE html>
 <html>
 <head>
   <meta charset="UTF-8">
