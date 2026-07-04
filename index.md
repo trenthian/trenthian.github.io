@@ -11,10 +11,16 @@ Portfolio Page in progress.
 
 I'm a developer interested in:
 
-- Web Development
-- AI & Machine Learning
-- Open Source
-- Cloud Computing
+- Game Design
+- Music Production
+- Sound and Foley
+- UX
+- Gameplay Design
+- Story and Scenario Writing
+- Video Editing
+- Direction
+- New Fresh and Complete Ideas
+
 
 ## Featured Projects
 
