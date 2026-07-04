@@ -171,6 +171,46 @@ a:hover {
 }
 
 /* =========================
+   VIDEO System
+========================= */
+.video-system {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* playlist bar */
+.video-playlist {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding: 10px 0;
+}
+
+/* video item cards */
+.video-item {
+  flex: 0 0 auto;
+
+  padding: 10px 14px;
+  border-radius: 10px;
+
+  background: linear-gradient(145deg, var(--card), var(--card2));
+  border: 1px solid var(--border);
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+
+  white-space: nowrap;
+}
+
+/* hover + active feel */
+.video-item:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+/* =========================
    GRID
 ========================= */
 
