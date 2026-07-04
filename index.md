@@ -3,8 +3,6 @@ title: Home
 layout: home
 ---
 
-<div class="container">
-
 # The Stellar Stoat
 
 Portfolio Page in progress.
@@ -49,7 +47,6 @@ Arrangement and Scoring of a Zelda Animatic
 <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:12px;">
   <iframe
     src="https://www.youtube.com/embed/ypbA6h2ZgyQ"
-    title="YouTube video player"
     style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
     allowfullscreen>
   </iframe>
@@ -62,9 +59,7 @@ Arrangement and Scoring of a Zelda Animatic
 ## Reserved
 
 <div class="card">
-
 Reserved Space.
-
 </div>
 
 ---
@@ -87,7 +82,7 @@ Maybe some Wine or Mead
 </div>
 
 <div class="card">
-You know I could do with a nice crustini instead of crackers.<br>
+Crustini would be nice instead of crackers.<br>
 Pickles are nice.
 </div>
 
@@ -102,7 +97,5 @@ Pickles are nice.
 - GitHub: https://github.com/trenthian  
 - LinkedIn: https://linktr.ee/trenthian  
 - Email: No  
-
-</div>
 
 </div>
