@@ -2,60 +2,102 @@
 ---
 
 /* ==========================================================
-   SHEIKAH SLATE PORTFOLIO THEME (PURPLE VARIANT)
+   SHEIKAH PORTFOLIO SYSTEM — PURPLE SLATE HYBRID
+   (Artifact UI + Professional Layout + Minimal Fantasy Layer)
    ========================================================== */
 
+
 /* ==========================================================
-   THEME VARIABLES
+   VARIABLES
    ========================================================== */
 
 :root {
-  --bg: #05070c;                 /* deep void slate */
-  --panel: #0b1220;              /* primary surface */
-  --panel-2: #070d18;            /* depth layer */
+  --bg: #05070c;
+  --panel: #0b1220;
+  --panel-2: #070d18;
 
-  --text: #d9e3f0;               /* cold light text */
+  --text: #d9e3f0;
   --muted: #9aa6b2;
 
-  /* PURPLE SHEIKAH CORE */
-  --accent: #b38cff;             /* soft violet glow */
-  --accent-dim: rgba(179, 140, 255, 0.18);
-  --accent-glow: rgba(179, 140, 255, 0.45);
+  --accent: #b38cff;
+  --accent-soft: rgba(179, 140, 255, 0.12);
+  --accent-mid: rgba(179, 140, 255, 0.22);
+  --accent-strong: rgba(179, 140, 255, 0.45);
 
   --border: rgba(179, 140, 255, 0.18);
 
-  --shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+  --shadow: 0 10px 40px rgba(0, 0, 0, 0.65);
 
   --radius: 14px;
+  --radius-soft: 10px;
 
   --transition: 0.25s ease;
+  --transition-fast: 0.15s ease;
 }
 
+
 /* ==========================================================
-   BASE
+   BASE LAYOUT
    ========================================================== */
 
 body {
   margin: 0;
   font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
 
-  background: radial-gradient(
-      circle at top,
+  background:
+    radial-gradient(circle at top,
       rgba(179, 140, 255, 0.10),
-      transparent 45%
-    ),
+      transparent 45%),
     var(--bg);
 
   color: var(--text);
-  line-height: 1.6;
+  line-height: 1.65;
 }
 
 html {
   scroll-behavior: smooth;
 }
 
+
 /* ==========================================================
-   NAVIGATION
+   TYPOGRAPHY (PORTFOLIO FIRST, STYLE SECOND)
+   ========================================================== */
+
+h1, h2, h3 {
+  color: var(--text);
+  margin: 0;
+  font-weight: 650;
+}
+
+h1 {
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  margin-bottom: 12px;
+}
+
+h2 {
+  margin-top: 64px;
+  margin-bottom: 18px;
+  padding-left: 14px;
+
+  border-left: 3px solid var(--accent);
+
+  position: relative;
+}
+
+/* subtle "rune tick" decoration */
+h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 40px;
+  height: 1px;
+  background: var(--accent-soft);
+}
+
+
+/* ==========================================================
+   NAVIGATION (LOCKED TERMINAL BAR)
    ========================================================== */
 
 .nav {
@@ -69,65 +111,50 @@ html {
   display: flex;
   justify-content: center;
 
-  padding: 14px 20px;
+  padding: 14px 18px;
 
-  background: rgba(5, 10, 18, 0.75);
-  backdrop-filter: blur(12px);
+  background: rgba(5, 10, 18, 0.78);
+  backdrop-filter: blur(14px);
 
-  border-bottom: 1px solid rgba(179, 140, 255, 0.18);
+  border-bottom: 1px solid var(--border);
 }
 
 .nav-inner {
   display: flex;
   gap: 18px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .nav a {
   color: var(--muted);
   text-decoration: none;
   font-weight: 500;
-  transition: color var(--transition);
+  transition: color var(--transition-fast);
 }
 
 .nav a:hover {
   color: var(--accent);
 }
 
+
 /* ==========================================================
-   MAIN LAYOUT
+   MAIN CONTAINER
    ========================================================== */
 
 main {
-  max-width: 1000px;
+  max-width: 1050px;
   margin: 0 auto;
-  padding: 100px 20px 60px;
+  padding: 110px 20px 70px;
 }
 
 .section {
-  margin-bottom: 70px;
+  margin-bottom: 72px;
 }
+
 
 /* ==========================================================
-   HEADINGS
-   ========================================================== */
-
-h1, h2, h3 {
-  color: var(--text);
-  margin-top: 0;
-}
-
-h1 {
-  font-size: 2.6rem;
-}
-
-h2 {
-  margin-top: 60px;
-  padding-left: 14px;
-  border-left: 3px solid var(--accent);
-}
-
-/* ==========================================================
-   CARD SYSTEM
+   CARD SYSTEM (ARTIFACT PANELS)
    ========================================================== */
 
 .card {
@@ -139,74 +166,76 @@ h2 {
     var(--panel-2)
   );
 
-  border: 1px solid rgba(179, 140, 255, 0.18);
+  border: 1px solid var(--border);
   border-radius: var(--radius);
 
-  padding: 20px;
-  margin-top: 16px;
+  padding: 22px;
 
   text-align: center;
 
-  transition: transform var(--transition),
-              box-shadow var(--transition),
-              border-color var(--transition);
+  transition:
+    transform var(--transition),
+    box-shadow var(--transition),
+    border-color var(--transition);
 
   overflow: hidden;
 }
 
-/* ambient purple glow */
+/* ambient artifact glow */
 .card::before {
   content: "";
   position: absolute;
   inset: 0;
 
-  background: radial-gradient(
-    circle at 50% 0%,
-    rgba(179, 140, 255, 0.20),
-    transparent 60%
-  );
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      var(--accent-soft),
+      transparent 60%
+    );
 
-  opacity: 0.6;
+  opacity: 0.7;
   pointer-events: none;
 }
 
+/* hover activation pulse */
 .card:hover {
-  transform: translateY(-4px);
-  border-color: var(--accent-glow);
-  box-shadow: 0 0 28px rgba(179, 140, 255, 0.20);
+  transform: translateY(-5px);
+  border-color: var(--accent-strong);
+  box-shadow: 0 0 30px var(--accent-mid);
 }
 
+
 /* ==========================================================
-   GRID
+   GRID (SYSTEMIC LAYOUT)
    ========================================================== */
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
   gap: 16px;
 }
 
+
 /* ==========================================================
-   VIDEO SYSTEM
+   VIDEO SYSTEM (SHOWREEL TERMINAL)
    ========================================================== */
 
 .video-wrapper iframe {
   width: 100%;
   aspect-ratio: 16 / 9;
   border: 0;
-  border-radius: 12px;
+  border-radius: var(--radius-soft);
 }
 
-/* horizontal strip */
 .video-strip {
   display: flex;
   gap: 12px;
   overflow-x: auto;
-  margin-top: 12px;
-  padding-bottom: 8px;
+  margin-top: 14px;
+  padding-bottom: 6px;
 }
 
-/* thumbnails */
 .video-thumb {
   flex: 0 0 160px;
   height: 90px;
@@ -216,10 +245,11 @@ h2 {
 
   cursor: pointer;
 
-  border: 1px solid rgba(179, 140, 255, 0.18);
+  border: 1px solid var(--border);
 
-  transition: transform var(--transition),
-              border-color var(--transition);
+  transition:
+    transform var(--transition-fast),
+    border-color var(--transition-fast);
 }
 
 .video-thumb img {
@@ -233,8 +263,9 @@ h2 {
   border-color: var(--accent);
 }
 
+
 /* ==========================================================
-   LINKS
+   LINKS (CONTROLLED ACCENT USAGE)
    ========================================================== */
 
 a {
@@ -246,8 +277,9 @@ a:hover {
   color: white;
 }
 
+
 /* ==========================================================
-   ACCESSIBILITY
+   MICRO INTERACTIONS (SUBTLE SYSTEM FEEL)
    ========================================================== */
 
 :focus-visible {
@@ -255,17 +287,33 @@ a:hover {
   outline-offset: 3px;
 }
 
+
 /* ==========================================================
-   MOBILE
+   RESPONSIVE LAYOUT
    ========================================================== */
 
 @media (max-width: 720px) {
   .nav-inner {
-    flex-wrap: wrap;
-    justify-content: center;
+    gap: 12px;
+  }
+
+  main {
+    padding-top: 100px;
   }
 
   h1 {
     font-size: 2rem;
+  }
+}
+
+
+/* ==========================================================
+   OPTIONAL: LOW MOTION SUPPORT
+   ========================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    scroll-behavior: auto !important;
   }
 }
