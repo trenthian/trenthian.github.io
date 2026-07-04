@@ -5,31 +5,35 @@ layout: home
 
 <div class="container">
 
-# The Stellar Stoat  
+# The Stellar Stoat
 
-Portfolio Page in progress.  
+Portfolio Page in progress.
 
----  
+---
 
-## About Me  
+## About Me
 
-I'm a developer interested in:  
+I'm a developer interested in:
 
-- Game Design  
-- Music Production  
-- Sound and Foley  
-- UX  
-- Gameplay Design  
-- Story and Scenario Writing  
-- Video  
-- Direction  
-- New Fresh and Complete Ideas  
+<div class="card">
+
+Game Design  
+Music Production  
+Sound and Foley  
+UX  
+Gameplay Design  
+Story and Scenario Writing  
+Video Editing  
+Direction  
+New Fresh and Complete Ideas  
+
+</div>
 
 ---
 
 ## Featured Project
 
-### YouTube
+### YouTube  
 Arrangement and Scoring of a Zelda Animatic
 
 <div class="card">
@@ -44,6 +48,10 @@ Arrangement and Scoring of a Zelda Animatic
     allowfullscreen>
   </iframe>
 </div>
+
+</div>
+
+---
 
 </div>
 
