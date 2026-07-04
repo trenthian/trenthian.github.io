@@ -82,53 +82,77 @@ const PLAYLIST_ID = "PLYIsLLpWMRZU";
 const playlistEl = document.getElementById("videoPlaylist");
 const iframe = document.getElementById("mainVideo");
 
-const feed = `https://www.youtube.com/feeds/videos.xml?playlist_id=${PLAYLIST_ID}`;
+if (playlistEl && iframe) {
 
-fetch(feed)
-  .then(r => r.text())
-  .then(str => {
-    const xml = new DOMParser().parseFromString(str, "text/xml");
-    const entries = xml.querySelectorAll("entry");
+  const feed = `https://www.youtube.com/feeds/videos.xml?playlist_id=${PLAYLIST_ID}`;
 
-    let first = null;
+  fetch(feed)
+    .then(async (r) => {
+      const text = await r.text();
 
-    entries.forEach(entry => {
-      const videoId = entry.querySelector("yt\\:videoId")?.textContent;
-      if (!videoId) return;
+      if (!text || text.includes("Error")) {
+        throw new Error("Empty or invalid YouTube feed");
+      }
 
-      if (!first) first = videoId;
+      return new DOMParser().parseFromString(text, "text/xml");
+    })
+    .then(xml => {
+      const entries = xml.getElementsByTagName("entry");
 
-      const item = document.createElement("div");
-      item.className = "video-item";
+      if (!entries.length) {
+        throw new Error("No videos found in playlist");
+      }
 
-      item.innerHTML = `
-        <img src="https://img.youtube.com/vi/${videoId}/hqdefault.jpg">
+      let first = null;
+
+      for (let entry of entries) {
+
+        const videoNode = entry.getElementsByTagName("yt:videoId")[0];
+        if (!videoNode) continue;
+
+        const videoId = videoNode.textContent;
+
+        if (!first) first = videoId;
+
+        const item = document.createElement("div");
+        item.className = "video-item";
+
+        item.innerHTML = `
+          <img src="https://img.youtube.com/vi/${videoId}/hqdefault.jpg">
+        `;
+
+        item.addEventListener("click", () => {
+          iframe.src = `https://www.youtube.com/embed/${videoId}`;
+
+          document.querySelectorAll(".video-item")
+            .forEach(i => i.classList.remove("active"));
+
+          item.classList.add("active");
+        });
+
+        playlistEl.appendChild(item);
+      }
+
+      if (first) {
+        iframe.src = `https://www.youtube.com/embed/${first}`;
+        playlistEl.firstChild?.classList.add("active");
+      }
+
+    })
+    .catch(err => {
+      console.warn("Playlist system failed:", err);
+
+      iframe.src = "https://www.youtube.com/embed/ypbA6h2ZgyQ";
+
+      playlistEl.innerHTML = `
+        <div style="padding:10px;color:#888;">
+          Playlist unavailable (showing fallback video)
+        </div>
       `;
-
-      item.addEventListener("click", () => {
-        iframe.src = `https://www.youtube.com/embed/${videoId}`;
-
-        document.querySelectorAll(".video-item")
-          .forEach(i => i.classList.remove("active"));
-
-        item.classList.add("active");
-
-        if (sound) {
-          sound.currentTime = 0;
-          sound.volume = 0.25;
-          sound.play();
-        }
-      });
-
-      playlistEl.appendChild(item);
     });
 
-    if (first) {
-      iframe.src = `https://www.youtube.com/embed/${first}`;
-      playlistEl.firstChild?.classList.add("active");
-    }
-  });
-
+}
+  
 </script>
 
 </body>
