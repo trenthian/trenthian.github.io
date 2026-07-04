@@ -47,7 +47,7 @@ New, Fresh and Complete Ideas
 
     <iframe
       id="mainVideo"
-      src="https://www.youtube.com/embed/videoseries?list=YOUR_PLAYLIST_ID"
+      src="https://www.youtube.com/embed/videoseries?list=PLYIsLLpWMRZU"
       style="width:100%;aspect-ratio:16/9;border:0;border-radius:12px;"
       allowfullscreen>
     </iframe>
