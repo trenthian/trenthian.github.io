@@ -2,7 +2,7 @@
 ---
 
 /* =========================
-   THEME VARIABLES
+   GLOBAL THEME VARIABLES
 ========================= */
 
 :root {
@@ -14,7 +14,7 @@
   --border: #232b3d;
 }
 
-/* 🌙 SHEIKAH SLATE THEME */
+/* optional alternate theme */
 body.slate {
   --bg: #05070c;
   --card: #0c1220;
@@ -25,7 +25,7 @@ body.slate {
 }
 
 /* =========================
-   GLOBAL
+   BASE
 ========================= */
 
 * {
@@ -61,29 +61,6 @@ body {
 }
 
 /* =========================
-   NAV
-========================= */
-
-.nav {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-
-  background: rgba(10, 12, 18, 0.75);
-  backdrop-filter: blur(10px);
-
-  border-bottom: 1px solid var(--border);
-
-  padding: 14px 36px;
-}
-
-.nav a {
-  margin-right: 16px;
-  color: var(--accent);
-  font-weight: 500;
-}
-
-/* =========================
    HEADINGS
 ========================= */
 
@@ -112,7 +89,7 @@ a:hover {
 }
 
 /* =========================
-   CARDS (ZELDA UI SYSTEM)
+   CARDS (ZELDA STYLE)
 ========================= */
 
 .card {
@@ -125,30 +102,14 @@ a:hover {
 
   display: flex;
   flex-direction: column;
+
   justify-content: center;
   align-items: center;
   text-align: center;
 
-  position: relative;
-  overflow: hidden;
-
   transition: all 0.25s ease;
-}
-
-/* hover glow */
-.card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-
-  background: radial-gradient(
-    circle at var(--x, 50%) var(--y, 50%),
-    rgba(110, 168, 254, 0.25),
-    transparent 60%
-  );
-
-  opacity: 0;
-  transition: opacity 0.3s ease;
+  overflow: hidden;
+  position: relative;
 }
 
 .card:hover {
@@ -157,17 +118,24 @@ a:hover {
   box-shadow: 0 12px 35px rgba(0,0,0,0.5);
 }
 
-.card:hover::before {
-  opacity: 1;
+/* glow hover effect */
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: radial-gradient(
+    circle at var(--x, 50%) var(--y, 50%),
+    rgba(110,168,254,0.25),
+    transparent 60%
+  );
+
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
-/* =========================
-   VIDEO CARD FIX
-========================= */
-
-.card.video {
-  display: block;
-  text-align: left;
+.card:hover::before {
+  opacity: 1;
 }
 
 /* =========================
@@ -185,10 +153,10 @@ a:hover {
   display: flex;
   gap: 12px;
   overflow-x: auto;
-  padding: 10px 2px;
+  padding: 10px 0;
 }
 
-/* thumbnail cards */
+/* video item */
 .video-item {
   flex: 0 0 160px;
   height: 90px;
@@ -196,83 +164,26 @@ a:hover {
   border-radius: 10px;
   border: 1px solid var(--border);
 
+  overflow: hidden;
   cursor: pointer;
 
   position: relative;
-  overflow: hidden;
 
   transition: all 0.2s ease;
-
-  background: #111;
 }
 
-/* thumbnail image */
 .video-item img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
 }
 
-/* overlay title */
-.video-item::after {
-  content: attr(data-title);
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-
-  padding: 6px;
-  font-size: 11px;
-
-  background: rgba(0,0,0,0.6);
-  color: #fff;
-}
-
-/* hover */
 .video-item:hover {
   transform: translateY(-3px);
   border-color: var(--accent);
 }
 
-/* active selection */
 .video-item.active {
   border: 2px solid var(--accent);
   box-shadow: 0 0 12px rgba(110,168,254,0.6);
-}
-
-/* =========================
-   GRID
-========================= */
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 20px;
-}
-
-/* =========================
-   TAGS
-========================= */
-
-.tag {
-  display: inline-block;
-  background: rgba(255,255,255,0.05);
-  color: var(--accent);
-
-  padding: 4px 10px;
-  border-radius: 999px;
-
-  font-size: 12px;
-  margin: 4px 4px 0 0;
-}
-
-/* =========================
-   FOOTER
-========================= */
-
-footer {
-  margin-top: 80px;
-  text-align: center;
-  color: #6b7280;
 }
