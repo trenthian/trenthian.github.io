@@ -79,28 +79,52 @@ h2 {
 
 .card {
   background: linear-gradient(145deg, #141a26, #101522);
-  padding: 22px;
-  border-radius: 14px;
   border: 1px solid #232b3d;
+  border-radius: 14px;
+
+  padding: 22px;
   margin-top: 16px;
 
+  /* Zelda-style centered UI panel */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  position: relative;
+  overflow: hidden;
+
   transition: all 0.25s ease;
+}
 
-  /* scroll animation base */
+/* =========================
+   HOVER EFFECT (ZELDA MENU GLOW)
+========================= */
+
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: radial-gradient(
+    circle at var(--x, 50%) var(--y, 50%),
+    rgba(110, 168, 254, 0.25),
+    transparent 60%
+  );
+
   opacity: 0;
-  transform: translateY(20px);
+  transition: opacity 0.3s ease;
 }
 
-.card.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* hover effect */
 .card:hover {
-  transform: translateY(-6px);
-  border-color: #3b82f6;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  transform: translateY(-6px) scale(1.01);
+  border-color: #6ea8fe;
+  box-shadow: 0 12px 35px rgba(0,0,0,0.5);
+}
+
+.card:hover::before {
+  opacity: 1;
 }
 
 /* =========================
