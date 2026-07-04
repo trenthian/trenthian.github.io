@@ -1,0 +1,17 @@
+title: The Stellar Stoat
+description: Trinkets Cache
+url: "https://trenthian.github.io"
+baseurl: ""
+
+remote_theme: just-the-docs/just-the-docs
+
+color_scheme: dark
+
+search_enabled: true
+
+nav_sort: case_insensitive
+
+footer_content: "&copy; 2026 Stoat"
+
+plugins:
+  - jekyll-remote-theme
