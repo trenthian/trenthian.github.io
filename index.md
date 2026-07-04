@@ -23,14 +23,14 @@ Story and Scenario Writing
 
 <div class="card">
 Music and Audio<br>
-Writing · Arranging · Production<br> 
+Writing · Arranging · Production<br>
 Sound Design / Foley
 </div>
 
 <div class="card">
 Direction<br>
 Sound and Video<br>
-Scenario<br>
+Scenario Writing<br>
 New, Fresh and Complete Ideas
 </div>
 
@@ -38,14 +38,14 @@ New, Fresh and Complete Ideas
 
 ---
 
-## Featured Work/s
+## Featured Work
 
 ### YouTube  
 Arrangement and Scoring of a Zelda Animatic
 
 <div class="card video">
 
-Legend of Zelda: Well Excuse Me Stalfos.
+Legend of Zelda: Well Excuse Me Stalfos
 
 <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:12px;">
   <iframe
@@ -62,7 +62,7 @@ Legend of Zelda: Well Excuse Me Stalfos.
 ## Reserved
 
 <div class="card">
-Reserved Space.
+Reserved Space
 </div>
 
 ---
@@ -72,7 +72,7 @@ Reserved Space.
 <div class="grid">
 
 <div class="card">
-People · Places · Things· Ideas<br> 
+People · Places · Things · Ideas<br>
 and also Noodles
 </div>
 
@@ -83,8 +83,8 @@ Maybe some Wine or Mead
 </div>
 
 <div class="card">
-Crustini would be nice instead of crackers.<br>
-Pickles are nice.
+Crustini would be nice instead of crackers<br>
+Pickles are nice
 </div>
 
 </div>
