@@ -38,25 +38,42 @@ New, Fresh and Complete Ideas
 
 ---
 
-## Featured Work
+## Featured Video
 
-### YouTube  
-Arrangement and Scoring of a Zelda Animatic
+<div class="video-system">
 
-<div class="card video">
+  <!-- MAIN PLAYER -->
+  <div class="card video" id="mainVideoCard">
 
-Legend of Zelda: Well Excuse Me Stalfos
+    <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:12px;">
+      <iframe
+        id="mainVideo"
+        src="https://www.youtube.com/embed/ypbA6h2ZgyQ"
+        style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
+        allowfullscreen>
+      </iframe>
+    </div>
 
-<div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:12px;">
-  <iframe
-    src="https://www.youtube.com/embed/ypbA6h2ZgyQ"
-    style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
-    allowfullscreen>
-  </iframe>
+  </div>
+
+  <!-- PLAYLIST BAR -->
+  <div class="video-playlist">
+
+    <div class="video-item" data-video="ypbA6h2ZgyQ">
+      🎵 Zelda Animatic Main
+    </div>
+
+    <div class="video-item" data-video="dQw4w9WgXcQ">
+      🎬 Sample Video 2
+    </div>
+
+    <div class="video-item" data-video="M7lc1UVf-VE">
+      🎮 Sample Video 3
+    </div>
+
+  </div>
+
 </div>
-
-</div>
-
 ---
 
 ## Reserved
