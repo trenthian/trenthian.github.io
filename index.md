@@ -45,12 +45,13 @@ New, Fresh and Complete Ideas
   <div class="card video">
     <iframe
       id="mainVideo"
+      src=""
       style="width:100%;aspect-ratio:16/9;border:0;border-radius:12px;"
       allowfullscreen>
     </iframe>
   </div>
 
-  <!-- PLAYLIST (AUTO LOADED) -->
+  <!-- PLAYLIST -->
   <div class="video-playlist" id="videoPlaylist"></div>
 
 </div>
