@@ -1,5 +1,3 @@
----
----
 
 /* =========================
    THEME VARIABLES
@@ -14,6 +12,7 @@
   --border: #232b3d;
 }
 
+/* optional alternate theme */
 body.slate {
   --bg: #05070c;
   --card: #0c1220;
@@ -50,7 +49,7 @@ body {
 }
 
 /* =========================
-   LAYOUT
+   CONTAINER
 ========================= */
 
 .container {
@@ -102,7 +101,7 @@ h2 {
   box-shadow: 0 12px 35px rgba(0,0,0,0.5);
 }
 
-/* glow */
+/* glow effect */
 .card::before {
   content: "";
   position: absolute;
