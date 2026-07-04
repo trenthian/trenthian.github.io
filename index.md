@@ -45,7 +45,7 @@ New, Fresh and Complete Ideas
   <div class="card video">
     <iframe
       id="mainVideo"
-      src=""
+      src="https://www.youtube.com/embed/ypbA6h2ZgyQ"
       style="width:100%;aspect-ratio:16/9;border:0;border-radius:12px;"
       allowfullscreen>
     </iframe>
