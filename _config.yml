@@ -1,0 +1,13 @@
+title: The Stellar Stoat
+description: Trinkets Cache
+
+url: "https://trenthian.github.io"
+baseurl: ""
+
+markdown: kramdown
+
+plugins:
+  - jekyll-feed
+
+sass:
+  style: compressed
