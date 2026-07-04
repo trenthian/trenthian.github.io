@@ -3,7 +3,7 @@ description: Trinkets Cache
 url: "https://trenthian.github.io"
 baseurl: ""
 
-remote_theme: just-the-docs/just-the-docs
+theme: jekyll-theme-hacker
 
 color_scheme: dark
 
