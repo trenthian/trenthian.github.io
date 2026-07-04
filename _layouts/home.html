@@ -1,159 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ page.title }}</title>
+
+  <title>{{ page.title }} | {{ site.title }}</title>
+
+  <meta name="description" content="{{ site.description }}">
 
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+
 </head>
 
 <body>
 
-<!-- NAV -->
-<div class="nav">
-  <a href="#top">Home</a>
-  <a href="#about">About</a>
-  <a href="#contact">Contact</a>
+<header class="nav">
 
-  <button id="themeToggle"
-    style="margin-left:12px;padding:6px 10px;border-radius:8px;border:1px solid var(--border);background:none;color:var(--accent);cursor:pointer;">
-    🌙 Theme
-  </button>
-</div>
+    <div class="nav-left">
+        <a href="#top">Home</a>
+        <a href="#about">About</a>
+        <a href="#featured-video">Video</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+    </div>
 
-<main class="container" id="top">
-  {{ content }}
+    <button
+        id="themeToggle"
+        class="theme-button"
+        type="button"
+        aria-label="Toggle theme">
+
+        🌙 Theme
+
+    </button>
+
+</header>
+
+<main
+    id="top"
+    class="container">
+
+    {{ content }}
+
 </main>
 
-<!-- AUDIO -->
 <audio id="uiSound" preload="auto">
-  <source src="https://assets.mixkit.co/active_storage/sfx/2571/2571-preview.mp3">
+    <source src="https://assets.mixkit.co/active_storage/sfx/2571/2571-preview.mp3">
 </audio>
 
-<script>
-
-/* =========================
-   THEME TOGGLE
-========================= */
-
-const themeBtn = document.getElementById("themeToggle");
-
-themeBtn?.addEventListener("click", () => {
-  document.body.classList.toggle("slate");
-});
-
-/* =========================
-   HOVER GLOW
-========================= */
-
-document.querySelectorAll(".card").forEach(card => {
-  card.addEventListener("mousemove", e => {
-    const r = card.getBoundingClientRect();
-    card.style.setProperty("--x", `${e.clientX - r.left}px`);
-    card.style.setProperty("--y", `${e.clientY - r.top}px`);
-  });
-});
-
-/* =========================
-   SOUND
-========================= */
-
-const sound = document.getElementById("uiSound");
-let last = 0;
-
-document.querySelectorAll(".card").forEach(card => {
-  card.addEventListener("mouseenter", () => {
-    const now = Date.now();
-    if (sound && now - last > 120) {
-      sound.currentTime = 0;
-      sound.volume = 0.25;
-      sound.play();
-      last = now;
-    }
-  });
-});
-
-/* =========================
-   VIDEO SYSTEM
-========================= */
-
-const PLAYLIST_ID = "PLYIsLLpWMRZU";
-const playlistEl = document.getElementById("videoPlaylist");
-const iframe = document.getElementById("mainVideo");
-
-if (playlistEl && iframe) {
-
-  const feed = `https://www.youtube.com/feeds/videos.xml?playlist_id=${PLAYLIST_ID}`;
-
-  fetch(feed)
-    .then(async (r) => {
-      const text = await r.text();
-
-      if (!text || text.includes("Error")) {
-        throw new Error("Empty or invalid YouTube feed");
-      }
-
-      return new DOMParser().parseFromString(text, "text/xml");
-    })
-    .then(xml => {
-      const entries = xml.getElementsByTagName("entry");
-
-      if (!entries.length) {
-        throw new Error("No videos found in playlist");
-      }
-
-      let first = null;
-
-      for (let entry of entries) {
-
-        const videoNode = entry.getElementsByTagName("yt:videoId")[0];
-        if (!videoNode) continue;
-
-        const videoId = videoNode.textContent;
-
-        if (!first) first = videoId;
-
-        const item = document.createElement("div");
-        item.className = "video-item";
-
-        item.innerHTML = `
-          <img src="https://img.youtube.com/vi/${videoId}/hqdefault.jpg">
-        `;
-
-        item.addEventListener("click", () => {
-          iframe.src = `https://www.youtube.com/embed/${videoId}`;
-
-          document.querySelectorAll(".video-item")
-            .forEach(i => i.classList.remove("active"));
-
-          item.classList.add("active");
-        });
-
-        playlistEl.appendChild(item);
-      }
-
-      if (first) {
-        iframe.src = `https://www.youtube.com/embed/${first}`;
-        playlistEl.firstChild?.classList.add("active");
-      }
-
-    })
-    .catch(err => {
-      console.warn("Playlist system failed:", err);
-
-      iframe.src = "https://www.youtube.com/embed/ypbA6h2ZgyQ";
-
-      playlistEl.innerHTML = `
-        <div style="padding:10px;color:#888;">
-          Playlist unavailable (showing fallback video)
-        </div>
-      `;
-    });
-
-}
-  
-</script>
+<script src="{{ '/assets/js/main.js' | relative_url }}"></script>
 
 </body>
+
 </html>
