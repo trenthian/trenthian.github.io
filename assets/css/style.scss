@@ -1,852 +1,118 @@
-/* ==========================================================
-   THE STELLAR STOAT
-   Main Stylesheet
-   ========================================================== */
-
-
-/* ==========================================================
-   THEME VARIABLES
-   ========================================================== */
-
 :root {
-
-  --bg: #0b0f17;
-  --surface: #141a26;
-  --surface-alt: #101522;
-
+  --bg: #070a10;
+  --card: #111827;
+  --card2: #0c1220;
   --text: #e6e6e6;
-  --text-muted: #9da7bb;
-
+  --muted: #9aa4b2;
   --accent: #6ea8fe;
-  --accent-soft: rgba(110, 168, 254, 0.20);
-  --accent-strong: rgba(110, 168, 254, 0.55);
-
-  --border: #232b3d;
-
-  --shadow:
-    0 12px 36px rgba(0,0,0,.45);
-
-  --radius: 14px;
-
-  --transition-fast: .18s ease;
-  --transition: .28s ease;
-
-}
-
-
-/* ==========================================================
-   SLATE THEME
-   ========================================================== */
-
-body.slate {
-
-  --bg: #05070c;
-
-  --surface: #0c1220;
-  --surface-alt: #0a0f1a;
-
-  --text: #d8ecff;
-  --text-muted: #91abc5;
-
-  --accent: #00d9ff;
-  --accent-soft: rgba(0,217,255,.20);
-  --accent-strong: rgba(0,217,255,.55);
-
-  --border: #1b2b3e;
-
-}
-
-
-/* ==========================================================
-   RESET
-   ========================================================== */
-
-*,
-*::before,
-*::after {
-
-  box-sizing: border-box;
-
-}
-
-html {
-
-  scroll-behavior: smooth;
-
+  --border: #1f2a3a;
 }
 
 body {
-
   margin: 0;
-
-  padding-inline: clamp(18px,4vw,36px);
-
+  font-family: system-ui, sans-serif;
   background: var(--bg);
-
   color: var(--text);
-
-  font-family:
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    Roboto,
-    sans-serif;
-
-  line-height: 1.75;
-
-  transition:
-    background var(--transition),
-    color var(--transition);
-
+  line-height: 1.6;
 }
 
-
-/* ==========================================================
-   TYPOGRAPHY
-   ========================================================== */
-
-h1,
-h2,
-h3 {
-
-  color: var(--text);
-
-  line-height: 1.2;
-
-  margin-top: 0;
-
+html {
+  scroll-behavior: smooth;
 }
 
-h1 {
-
-  font-size: clamp(2.4rem,4vw,3.4rem);
-
-}
-
-h2 {
-
-  margin-top: 72px;
-
-  padding-left: 14px;
-
-  border-left: 4px solid var(--accent);
-
-}
-
-h3 {
-
-  margin-top: 42px;
-
-}
-
-p {
-
-  color: var(--text);
-
-}
-
-strong {
-
-  color: white;
-
-}
-
-
-/* ==========================================================
-   LINKS
-   ========================================================== */
-
-a {
-
-  color: var(--accent);
-
-  text-decoration: none;
-
-  transition: color var(--transition-fast);
-
-}
-
-a:hover {
-
-  color: white;
-
-}
-
-
-/* ==========================================================
-   LISTS
-   ========================================================== */
-
-ul {
-
-  padding-left: 1.25rem;
-
-}
-
-li + li {
-
-  margin-top: .5rem;
-
-}
-
-
-/* ==========================================================
-   HORIZONTAL RULES
-   ========================================================== */
-
-hr {
-
-  margin: 52px 0;
-
-  border: 0;
-
-  border-top: 1px solid var(--border);
-
-}
-
-
-/* ==========================================================
-   LAYOUT
-   ========================================================== */
-
-.container {
-
-  width: 100%;
-
-  max-width: 1080px;
-
-  margin-inline: auto;
-
-  padding-block: 64px;
-
-}
-
-
-/* ==========================================================
-   NAVIGATION
-   ========================================================== */
+/* NAV */
 
 .nav {
-
-  position: sticky;
-
+  position: fixed;
   top: 0;
-
-  z-index: 500;
-
-  display: flex;
-
-  justify-content: space-between;
-
-  align-items: center;
-
-  gap: 20px;
-
-  margin-inline: auto;
-
-  max-width: 1080px;
-
-  padding:
-
-    18px
-    0;
-
-  backdrop-filter: blur(14px);
-
-  background:
-    rgba(11,15,23,.72);
-
-  border-bottom:
-    1px solid
-    rgba(255,255,255,.04);
-
+  left: 0;
+  right: 0;
+  background: rgba(10, 14, 22, 0.85);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+  z-index: 1000;
 }
 
-body.slate .nav {
-
-  background:
-    rgba(5,7,12,.72);
-
-}
-
-.nav-left {
-
+.nav-inner {
+  max-width: 1000px;
+  margin: auto;
   display: flex;
-
-  flex-wrap: wrap;
-
   gap: 18px;
-
+  padding: 14px 20px;
 }
 
 .nav a {
-
-  color: var(--text-muted);
-
-  font-weight: 600;
-
-  letter-spacing: .02em;
-
+  color: var(--muted);
+  text-decoration: none;
 }
 
 .nav a:hover {
-
   color: var(--accent);
-
 }
 
+/* LAYOUT */
 
-/* ==========================================================
-   THEME BUTTON
-   ========================================================== */
-
-.theme-button {
-
-  border: 1px solid var(--border);
-
-  border-radius: 10px;
-
-  background: transparent;
-
-  color: var(--accent);
-
-  cursor: pointer;
-
-  padding:
-
-    .65rem
-    1rem;
-
-  font: inherit;
-
-  transition:
-
-    border-color var(--transition-fast),
-
-    color var(--transition-fast),
-
-    background var(--transition-fast),
-
-    transform var(--transition-fast);
-
+main {
+  max-width: 1000px;
+  margin: auto;
+  padding: 90px 20px 60px;
 }
 
-.theme-button:hover {
-
-  border-color: var(--accent);
-
-  background: var(--accent-soft);
-
+.section {
+  margin-bottom: 70px;
 }
 
-.theme-button:active {
-
-  transform: scale(.97);
-
-}
-
-.theme-button:focus-visible {
-
-  outline: 2px solid var(--accent);
-
-  outline-offset: 3px;
-
-}
-
-
-/* ==========================================================
-   SECTION SPACING
-   ========================================================== */
-
-section {
-
-  scroll-margin-top: 90px;
-
-}
-
-
-/* ==========================================================
-   GRID
-   ========================================================== */
-
-.grid {
-
-  display: grid;
-
-  grid-template-columns:
-
-    repeat(
-      auto-fit,
-      minmax(240px,1fr)
-    );
-
-  gap: 22px;
-
-  align-items: stretch;
-
-}
-
-
-/* ==========================================================
-   RESPONSIVE
-   ========================================================== */
-
-@media (max-width: 720px) {
-
-  .nav {
-
-    flex-direction: column;
-
-    align-items: flex-start;
-
-  }
-
-  .nav-left {
-
-    width: 100%;
-
-    justify-content: space-between;
-
-  }
-
-  .theme-button {
-
-    width: 100%;
-
-  }
-
-}
-
-
-/* ==========================================================
-   CARDS
-   ========================================================== */
+/* CARDS */
 
 .card {
-
-  position: relative;
-
-  display: flex;
-
-  flex-direction: column;
-
-  align-items: center;
-
-  justify-content: center;
-
+  background: linear-gradient(145deg, var(--card), var(--card2));
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 20px;
   text-align: center;
-
-  gap: 10px;
-
-  padding: 22px;
-
   margin-top: 16px;
-
-  border-radius: var(--radius);
-
-  border: 1px solid var(--border);
-
-  background: linear-gradient(
-    145deg,
-    var(--surface),
-    var(--surface-alt)
-  );
-
-  box-shadow: none;
-
-  transition:
-    transform var(--transition),
-    border-color var(--transition),
-    box-shadow var(--transition);
-
-  overflow: hidden;
-
 }
 
-.card:hover {
+/* GRID */
 
-  transform: translateY(-6px);
-
-  border-color: var(--accent);
-
-  box-shadow: var(--shadow);
-
-}
-
-
-/* ==========================================================
-   CARD HOVER GLOW
-   ========================================================== */
-
-.card::before {
-
-  content: "";
-
-  position: absolute;
-
-  inset: 0;
-
-  background: radial-gradient(
-    circle at var(--x, 50%) var(--y, 50%),
-    var(--accent-soft),
-    transparent 60%
-  );
-
-  opacity: 0;
-
-  transition: opacity var(--transition);
-
-  pointer-events: none;
-
-}
-
-.card:hover::before {
-
-  opacity: 1;
-
-}
-
-
-/* ==========================================================
-   VIDEO SYSTEM
-   ========================================================== */
-
-.video-system {
-
-  display: flex;
-
-  flex-direction: column;
-
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 16px;
-
 }
 
+/* VIDEO */
 
-/* MAIN VIDEO WRAPPER */
-
-.video {
-
-  padding: 0;
-
-  overflow: hidden;
-
-  border-radius: var(--radius);
-
-}
-
-
-/* IFRAME */
-
-.video iframe {
-
+.video-wrapper iframe {
   width: 100%;
-
-  aspect-ratio: 16 / 9;
-
+  aspect-ratio: 16/9;
   border: 0;
-
-  display: block;
-
+  border-radius: 10px;
 }
 
-
-/* PLAYLIST */
-
-.video-playlist {
-
+.video-strip {
   display: flex;
-
   gap: 12px;
-
   overflow-x: auto;
-
-  padding: 10px 2px;
-
-  scroll-snap-type: x mandatory;
-
+  margin-top: 12px;
+  padding-bottom: 8px;
 }
 
-
-/* VIDEO ITEM */
-
-.video-item {
-
+.video-thumb {
   flex: 0 0 160px;
-
   height: 90px;
-
   border-radius: 10px;
-
   overflow: hidden;
-
   cursor: pointer;
-
   border: 1px solid var(--border);
-
-  transition:
-    transform var(--transition-fast),
-    border-color var(--transition-fast);
-
-  scroll-snap-align: start;
-
-  background: var(--surface);
-
 }
 
-.video-item img {
-
+.video-thumb img {
   width: 100%;
-
   height: 100%;
-
   object-fit: cover;
-
-  display: block;
-
 }
 
-.video-item:hover {
-
-  transform: translateY(-3px);
-
+.video-thumb:hover {
   border-color: var(--accent);
-
 }
-
-.video-item.active {
-
-  border: 2px solid var(--accent);
-
-  box-shadow: 0 0 14px var(--accent-strong);
-
-}
-
-
-/* ==========================================================
-   INLINE MEDIA / EMBEDS
-   ========================================================== */
-
-iframe {
-
-  max-width: 100%;
-
-}
-
-
-/* ==========================================================
-   CODE / PRE (future-proofing)
-   ========================================================== */
-
-code,
-pre {
-
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-
-}
-
-pre {
-
-  padding: 16px;
-
-  border-radius: var(--radius);
-
-  background: var(--surface);
-
-  overflow-x: auto;
-
-  border: 1px solid var(--border);
-
-}
-
-
-/* ==========================================================
-   FOCUS + ACCESSIBILITY
-   ========================================================== */
-
-:focus-visible {
-
-  outline: 2px solid var(--accent);
-
-  outline-offset: 3px;
-
-}
-
-
-/* Improve tap targets on mobile */
-
-a,
-button {
-
-  touch-action: manipulation;
-
-}
-
-
-/* ==========================================================
-   SCROLL BEHAVIOR
-   ========================================================== */
-
-html {
-
-  scroll-behavior: smooth;
-
-}
-
-
-/* Ensure anchored sections aren't hidden under sticky nav */
-
-section {
-
-  scroll-margin-top: 90px;
-
-}
-
-
-/* ==========================================================
-   SCROLLBAR (optional but consistent)
-   ========================================================== */
-
-* {
-
-  scrollbar-width: thin;
-
-  scrollbar-color: var(--accent) transparent;
-
-}
-
-*::-webkit-scrollbar {
-
-  height: 10px;
-
-  width: 10px;
-
-}
-
-*::-webkit-scrollbar-track {
-
-  background: transparent;
-
-}
-
-*::-webkit-scrollbar-thumb {
-
-  background: var(--border);
-
-  border-radius: 10px;
-
-}
-
-*::-webkit-scrollbar-thumb:hover {
-
-  background: var(--accent);
-
-}
-
-
-/* ==========================================================
-   MOBILE TWEAKS
-   ========================================================== */
-
-@media (max-width: 720px) {
-
-  .container {
-
-    padding-block: 40px;
-
-  }
-
-  h2 {
-
-    margin-top: 48px;
-
-  }
-
-  .card {
-
-    padding: 18px;
-
-  }
-
-  .video-item {
-
-    flex: 0 0 140px;
-
-    height: 80px;
-
-  }
-
-}
-
-
-/* ==========================================================
-   REDUCED MOTION
-   ========================================================== */
-
-@media (prefers-reduced-motion: reduce) {
-
-  * {
-
-    animation: none !important;
-
-    transition: none !important;
-
-    scroll-behavior: auto !important;
-
-  }
-
-}
-
-
-/* ==========================================================
-   PRINT SAFETY (optional)
-   ========================================================== */
-
-@media print {
-
-  body {
-
-    background: white;
-
-    color: black;
-
-  }
-
-  .nav,
-  .video-playlist,
-  .theme-button {
-
-    display: none !important;
-
-  }
-
-}
-
-
-/* ==========================================================
-   SMALL UTILITIES
-   ========================================================== */
-
-.hidden {
-
-  display: none !important;
-
-}
-
-.center {
-
-  text-align: center;
-
-}
-
-.mt-0 { margin-top: 0; }
-.mt-1 { margin-top: 8px; }
-.mt-2 { margin-top: 16px; }
-.mt-3 { margin-top: 24px; }
-.mt-4 { margin-top: 32px; }
-
-.mb-0 { margin-bottom: 0; }
-.mb-1 { margin-bottom: 8px; }
-.mb-2 { margin-bottom: 16px; }
-.mb-3 { margin-bottom: 24px; }
-.mb-4 { margin-bottom: 32px; }
