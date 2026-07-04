@@ -12,7 +12,7 @@
 <body>
 
 <!-- =========================
-     NAV BAR
+   NAV
 ========================= -->
 <div class="nav">
   <a href="#top">Home</a>
@@ -20,7 +20,6 @@
   <a href="#projects">Projects</a>
   <a href="#contact">Contact</a>
 
-  <!-- Theme Toggle -->
   <button id="themeToggle" style="
     margin-left: 12px;
     background: none;
@@ -35,26 +34,26 @@
 </div>
 
 <!-- =========================
-     MAIN CONTENT
+   CONTENT
 ========================= -->
 <main class="container" id="top">
   {{ content }}
 </main>
 
 <!-- =========================
-     AUDIO (UI SOUND)
+   AUDIO
 ========================= -->
 <audio id="uiSound" preload="auto">
-  <source src="https://assets.mixkit.co/active_storage/sfx/2571/2571-preview.mp3" type="audio/mpeg">
+  <source src="https://assets.mixkit.co/active_storage/sfx/2571/2571-preview.mp3">
 </audio>
 
 <!-- =========================
-     SCRIPTS
+   SCRIPT SYSTEM
 ========================= -->
 <script>
 
 /* =========================
-   THEME TOGGLE (SAVE + LOAD)
+   THEME TOGGLE
 ========================= */
 const themeBtn = document.getElementById("themeToggle");
 
@@ -67,43 +66,43 @@ themeBtn?.addEventListener("click", () => {
   );
 });
 
-// restore theme
 if (localStorage.getItem("theme") === "slate") {
   document.body.classList.add("slate");
 }
 
 /* =========================
-   HOVER GLOW SYSTEM
+   HOVER GLOW
 ========================= */
-document.querySelectorAll('.card').forEach(card => {
-  card.addEventListener('mousemove', e => {
-    const rect = card.getBoundingClientRect();
-    card.style.setProperty('--x', `${e.clientX - rect.left}px`);
-    card.style.setProperty('--y', `${e.clientY - rect.top}px`);
+document.querySelectorAll(".card").forEach(card => {
+  card.addEventListener("mousemove", e => {
+    const r = card.getBoundingClientRect();
+    card.style.setProperty("--x", `${e.clientX - r.left}px`);
+    card.style.setProperty("--y", `${e.clientY - r.top}px`);
   });
 });
 
 /* =========================
-   SOUND SYSTEM (THROTTLED)
+   SOUND
 ========================= */
 const sound = document.getElementById("uiSound");
-let lastPlay = 0;
+let last = 0;
 
 document.querySelectorAll(".card").forEach(card => {
   card.addEventListener("mouseenter", () => {
     const now = Date.now();
-    if (now - lastPlay > 120) {
+    if (now - last > 120) {
       sound.currentTime = 0;
       sound.volume = 0.25;
       sound.play();
-      lastPlay = now;
+      last = now;
     }
   });
 });
 
 /* =========================
-   VIDEO SYSTEM (THUMBNAILS + SWITCHING)
+   VIDEO SYSTEM
 ========================= */
+
 const iframe = document.getElementById("mainVideo");
 const items = document.querySelectorAll(".video-item");
 
@@ -113,27 +112,23 @@ function setActive(el) {
 }
 
 items.forEach(item => {
+  const id = item.dataset.video;
 
-  const id = item.getAttribute("data-video");
-
-  /* build thumbnail */
   const img = document.createElement("img");
   img.src = `https://img.youtube.com/vi/${id}/hqdefault.jpg`;
   item.appendChild(img);
 
-  /* click to switch video */
   item.addEventListener("click", () => {
-    if (iframe) {
-      iframe.src = `https://www.youtube.com/embed/${id}`;
-    }
+    iframe.src = `https://www.youtube.com/embed/${id}`;
 
     setActive(item);
 
-    /* click sound */
-    if (sound) {
+    const now = Date.now();
+    if (sound && now - last > 120) {
       sound.currentTime = 0;
       sound.volume = 0.25;
       sound.play();
+      last = now;
     }
   });
 });
