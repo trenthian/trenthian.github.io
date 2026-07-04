@@ -44,6 +44,8 @@ A short description of your project.
 - Ideas
 - mustelids
 - Cheese Crackers
+- Maybe some Wine or Mead
+- You know I could do with a nice crustini instead of crackers.
 
 ## Contact
 
