@@ -43,7 +43,7 @@ New, Fresh and Complete Ideas
 ### YouTube  
 Arrangement and Scoring of a Zelda Animatic
 
-<div class="card">
+<div class="card video">
 
 Legend of Zelda: Well Excuse Me Stalfos.
 
