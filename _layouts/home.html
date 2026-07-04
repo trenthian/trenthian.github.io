@@ -7,90 +7,75 @@
   <title>{{ page.title }}</title>
 
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
-
 </head>
 
 <body>
 
 <!-- =========================
-     STICKY NAV
+     NAV BAR
 ========================= -->
 <div class="nav">
   <a href="#top">Home</a>
   <a href="#about">About</a>
   <a href="#projects">Projects</a>
   <a href="#contact">Contact</a>
+
+  <!-- Theme Toggle -->
+  <button id="themeToggle" style="
+    margin-left: 12px;
+    background: none;
+    border: 1px solid var(--border);
+    color: var(--accent);
+    padding: 6px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+  ">
+    🌙 Theme
+  </button>
 </div>
 
 <!-- =========================
-     MAIN CONTENT WRAPPER
-     (THIS FIXES ALL HEADING / LAYOUT ISSUES)
+     MAIN CONTENT
 ========================= -->
 <main class="container" id="top">
-
   {{ content }}
-
 </main>
 
 <!-- =========================
-     SCROLL REVEAL ANIMATION
+     HOVER SOUND
 ========================= -->
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  const cards = document.querySelectorAll('.card');
+<audio id="uiSound" preload="auto">
+  <source src="https://assets.mixkit.co/active_storage/sfx/2571/2571-preview.mp3" type="audio/mpeg">
+</audio>
 
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      }
-    });
-  }, {
-    threshold: 0.1
-  });
-
-  cards.forEach(card => observer.observe(card));
-});
-</script>
-
-</body>
-</html><!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <title>{{ page.title }}</title>
-  <link rel="stylesheet" href="/assets/css/style.css">
-</head>
-
-<body>
-
-<div class="nav">
-  <a href="#top">Home</a>
-  <a href="#about">About</a>
-  <a href="#projects">Projects</a>
-  <a href="#contact">Contact</a>
-</div>
-
-<div class="container" id="top">
-  {{ content }}
-</div>
+<!-- =========================
+     SCRIPTS
+========================= -->
 
 <script>
-const cards = document.querySelectorAll('.card');
+/* =========================
+   THEME TOGGLE
+========================= */
+const btn = document.getElementById("themeToggle");
 
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-    }
-  });
-}, {
-  threshold: 0.1
+btn.addEventListener("click", () => {
+  document.body.classList.toggle("slate");
+
+  if (document.body.classList.contains("slate")) {
+    localStorage.setItem("theme", "slate");
+  } else {
+    localStorage.setItem("theme", "dark");
+  }
 });
 
-cards.forEach(card => observer.observe(card));
-</script>
-<script>
+// load saved theme
+if (localStorage.getItem("theme") === "slate") {
+  document.body.classList.add("slate");
+}
+
+/* =========================
+   HOVER GLOW TRACKING
+========================= */
 document.querySelectorAll('.card').forEach(card => {
   card.addEventListener('mousemove', e => {
     const rect = card.getBoundingClientRect();
@@ -98,6 +83,25 @@ document.querySelectorAll('.card').forEach(card => {
     card.style.setProperty('--y', `${e.clientY - rect.top}px`);
   });
 });
+
+/* =========================
+   HOVER SOUND (THROTTLED)
+========================= */
+const sound = document.getElementById("uiSound");
+let lastPlay = 0;
+
+document.querySelectorAll(".card").forEach(card => {
+  card.addEventListener("mouseenter", () => {
+    const now = Date.now();
+    if (now - lastPlay > 120) {
+      sound.currentTime = 0;
+      sound.volume = 0.25;
+      sound.play();
+      lastPlay = now;
+    }
+  });
+});
 </script>
+
 </body>
 </html>
