@@ -16,22 +16,23 @@ Portfolio Page in progress.
 I'm a developer interested in:
 
 <div class="grid">
-  
+
 <div class="card">
-Game Design <br>
-UX * Gameplay Design * Story and Scenario Writing
+Game Design<br>
+UX · Gameplay Design · Story and Scenario Writing
 </div>
 
 <div class="card">
-Music and Audio <br>
-Writing * Arranging * Production * Sound Design/Foley  
+Music and Audio<br>
+Writing · Arranging · Production · Sound Design / Foley
 </div>
 
 <div class="card">
-Direction <br>
-Sound and Video * Experience * 
-New Fresh and Complete Ideas  
+Direction<br>
+Sound and Video Experience<br>
+New Fresh and Complete Ideas
 </div>
+
 </div>
 
 ---
@@ -73,21 +74,21 @@ Reserved Space.
 <div class="grid">
 
 <div class="card">
-People  
-Places  
-Things  
-Ideas  
+People<br>
+Places<br>
+Things<br>
+Ideas
 </div>
 
 <div class="card">
-Mustelids  
-Cheese Crackers  
-Maybe some Wine or Mead  
+Mustelids<br>
+Cheese Crackers<br>
+Maybe some Wine or Mead
 </div>
 
 <div class="card">
-You know I could do with a nice crustini instead of crackers.  
-Pickles are nice.  
+You know I could do with a nice crustini instead of crackers.<br>
+Pickles are nice.
 </div>
 
 </div>
