@@ -5,13 +5,14 @@ layout: home
 
 # The Stellar Stoat
 
-Portfolio Page in progress.
+Portfolio page in progress.
 
 ---
 
 ## About Me
+{: #about}
 
-I'm a developer interested in:
+I'm a developer interested in systems that combine design, interaction, and narrative structure.
 
 <div class="grid">
 
@@ -30,7 +31,7 @@ Sound Design / Foley
 <div class="card">
 Direction<br>
 Sound and Video<br>
-New, Fresh and Complete Ideas
+System-driven creative work
 </div>
 
 </div>
@@ -38,27 +39,50 @@ New, Fresh and Complete Ideas
 ---
 
 ## Featured Video
+{: #featured-video}
 
 <div class="video-system">
 
-  <!-- MAIN PLAYER -->
   <div class="card video">
     <iframe
       id="mainVideo"
       src="https://www.youtube.com/embed/ypbA6h2ZgyQ"
-      style="width:100%;aspect-ratio:16/9;border:0;border-radius:12px;"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
       allowfullscreen>
     </iframe>
   </div>
 
-  <!-- PLAYLIST -->
   <div class="video-playlist" id="videoPlaylist"></div>
 
 </div>
 
 ---
 
-## Reserved
+## Skills
+{: #skills}
+
+<div class="grid">
+
+<div class="card">
+People · Places · Systems · Ideas
+</div>
+
+<div class="card">
+Design Thinking<br>
+Interaction Systems<br>
+Prototyping
+</div>
+
+<div class="card">
+Audio · Visual · Narrative<br>
+Cross-domain integration
+</div>
+
+</div>
+
+---
+
+## Reserved Space
 
 <div class="card">
 Reserved Space
@@ -66,34 +90,15 @@ Reserved Space
 
 ---
 
-## Skills
-
-<div class="grid">
-
-<div class="card">
-People · Places · Things · Ideas
-</div>
-
-<div class="card">
-Mustelids<br>
-Cheese Crackers<br>
-Wine or Mead
-</div>
-
-<div class="card">
-Crustini · Pickles · Ideas
-</div>
-
-</div>
-
----
-
 ## Contact
+{: #contact}
 
 <div class="card">
 
-- GitHub: https://github.com/trenthian  
-- Linktree: https://linktr.ee/trenthian  
-- Email: Nothanks  
+<ul>
+  <li>GitHub: https://github.com/trenthian</li>
+  <li>Linktree: https://linktr.ee/trenthian</li>
+  <li>Email: Nothanks</li>
+</ul>
 
 </div>
