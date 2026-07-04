@@ -17,14 +17,14 @@ I'm a developer interested in:
 
 <div class="card">
 
-Game Design  
-Music Production  
-Sound and Foley  
-UX  
-Gameplay Design  
-Story and Scenario Writing  
-Video Editing  
-Direction  
+Game Design <br>
+UX * Gameplay Design * Story and Scenario Writing
+
+Music and Audio <br>
+Writing * Arranging * Production * Sound Design/Foley  
+  
+Direction <br>
+Sound and Video * Experience * 
 New Fresh and Complete Ideas  
 
 </div>
