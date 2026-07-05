@@ -48,14 +48,46 @@ layout: default
 
   <h2>Skills</h2>
 
-  <div class="grid">
+<div class="grid">
 
-    <div class="card modal-card"
-      data-title="Music"
-      data-description="Composition, arranging, production, recording, and music direction."
-    >
-      Music
-    </div>
+  <div class="card modal-card">
+    <strong>Music</strong>
+
+    <ul class="skill-list">
+      <li>Writing</li>
+      <li>Arranging</li>
+      <li>Production</li>
+      <li>Recording</li>
+    </ul>
+  </div>
+
+  <div class="card modal-card">
+    <strong>Audio</strong>
+
+    <ul class="skill-list">
+      <li>Design</li>
+      <li>Recording</li>
+      <li>Foley</li>
+      <li>Direction</li>
+      <li>Production</li>
+    </ul>
+  </div>
+
+  <div class="card modal-card">
+    <strong>Game Development</strong>
+
+    <ul class="skill-list">
+      <li>Gameplay Design</li>
+      <li>Scenario Writing</li>
+      <li>Story Development</li>
+      <li>UX / UI</li>
+      <li>Worldbuilding</li>
+      <li>Direction</li>
+      <li>Production</li>
+    </ul>
+  </div>
+
+</div>
 
     <div class="card modal-card"
       data-title="Audio"
