@@ -21,7 +21,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const strip = document.getElementById("videoStrip");
 
   function setVideo(id) {
-    iframe.src = `https://www.youtube.com/embed/${id}?rel=0&modestbranding=1`;
+    if (!iframe) return;
+
+    iframe.src =
+      `https://www.youtube.com/embed/${id}?rel=0&modestbranding=1`;
   }
 
   if (iframe && strip) {
@@ -52,89 +55,134 @@ document.addEventListener("DOMContentLoaded", () => {
       strip.appendChild(thumb);
 
       if (index === 0) {
-
         setVideo(id);
         thumb.classList.add("active");
-
       }
 
     });
 
   }
 
- /* ==========================================================
-   MODAL SYSTEM (FIXED SCROLL BEHAVIOR)
-   ========================================================== */
+  /* ==========================================================
+     MODAL SYSTEM
+     ========================================================== */
 
-const modal = document.getElementById("modal");
-const modalContent = document.getElementById("modalContent");
+  const modal = document.getElementById("modal");
+  const modalContent = document.getElementById("modalContent");
 
-function openModal(html) {
   if (!modal || !modalContent) return;
 
-  modalContent.innerHTML = html;
-  modal.classList.remove("hidden");
+  let modalOpen = false;
 
-  document.body.style.overflow = "hidden";
-}
+  function openModal(html) {
 
-function closeModal() {
-  if (!modal || !modalContent) return;
+    modalContent.innerHTML = html;
 
-  modal.classList.add("hidden");
-  modalContent.innerHTML = "";
+    modal.classList.add("show");
 
-  document.body.style.overflow = "";
-}
+    document.body.style.overflow = "hidden";
 
-/* close on background click */
-if (modal) {
-  modal.addEventListener("click", (e) => {
-    if (e.target === modal) {
-      closeModal();
-    }
-  });
-}
+    modalOpen = true;
 
-/* ESC key */
-document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape") {
-    closeModal();
   }
-});
-  
-/* ==========================================================
-   MODAL CARDS
-   ========================================================== */
 
-document.querySelectorAll(".modal-card").forEach(card => {
+  function closeModal() {
 
-  card.style.cursor = "pointer";
+    if (!modalOpen) return;
 
-  card.addEventListener("click", () => {
+    modal.classList.remove("show");
 
-    openModal(`
+    modalOpen = false;
 
-      <h2>${card.dataset.title}</h2>
+    setTimeout(() => {
 
-      ${
-        card.dataset.image
-          ? `<img
-              src="${card.dataset.image}"
-              style="
-                width:100%;
-                border-radius:12px;
-                margin:18px 0;
-              ">`
-          : ""
+      modalContent.innerHTML = "";
+
+      document.body.style.overflow = "";
+
+    }, 240);
+
+  }
+
+  /* Click outside */
+
+  modal.addEventListener("click", (event) => {
+
+    if (event.target === modal) {
+
+      closeModal();
+
+    }
+
+  });
+
+  /* ESC */
+
+  document.addEventListener("keydown", (event) => {
+
+    if (event.key === "Escape") {
+
+      closeModal();
+
+    }
+
+  });
+
+  /* ==========================================================
+     MODAL CARDS
+     ========================================================== */
+
+  document.querySelectorAll(".modal-card").forEach(card => {
+
+    card.style.cursor = "pointer";
+
+    card.addEventListener("click", () => {
+
+      const title =
+        card.dataset.title || "";
+
+      const description =
+        card.dataset.description || "";
+
+      const image =
+        card.dataset.image || "";
+
+      const video =
+        card.dataset.video || "";
+
+      let html = "";
+
+      html += `<h2>${title}</h2>`;
+
+      if (image) {
+
+        html += `
+          <img
+            src="${image}"
+            alt="">
+        `;
+
       }
 
-      <p>${card.dataset.description}</p>
+      if (video) {
 
-    `);
+        html += `
+          <div class="video-wrapper">
+            <iframe
+              src="https://www.youtube.com/embed/${video}?rel=0&modestbranding=1"
+              allowfullscreen>
+            </iframe>
+          </div>
+        `;
+
+      }
+
+      html += `<p>${description}</p>`;
+
+      openModal(html);
+
+    });
 
   });
 
 });
-
-});                         
