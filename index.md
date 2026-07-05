@@ -33,12 +33,15 @@ layout: default
 
   <div class="grid">
 
-    <div class="card">Game Design</div>
-    <div class="card">UX / UI</div>
-    <div class="card">Audio Design</div>
-    <div class="card">Programming</div>
-
-  </div>
+    <div class="card">Music<br>
+    Writing Arranging Production Recording<br></div>
+    
+    <div class="card">Audio<br>
+    Design Recording Foley Direction Production<br></div>
+    
+    <div class="card">Game Development<br>
+    Gameplay Design Scenario Story UX/UI Worldbuilding Direction Production</div>
+</div>
 </section>
 
 <section id="projects" class="section">
