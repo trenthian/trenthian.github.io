@@ -11,6 +11,10 @@
 
 <body>
 
+<!-- ==========================================================
+     NAVIGATION
+     ========================================================== -->
+
 <header class="nav">
   <div class="nav-inner">
     <a href="#top">Home</a>
@@ -22,18 +26,30 @@
   </div>
 </header>
 
+<!-- ==========================================================
+     MAIN CONTENT
+     ========================================================== -->
+
 <main id="top">
   {{ content }}
 </main>
 
 <!-- ==========================================================
-     MODAL SYSTEM 
+     MODAL SYSTEM
      ========================================================== -->
 
 <div id="modal" class="modal">
   <div class="modal-inner" id="modalInner"></div>
 </div>
 
+<!-- ==========================================================
+     SCRIPTS
+     ========================================================== -->
+
+<!-- YouTube IFrame API (REQUIRED for Option B video system) -->
+<script src="https://www.youtube.com/iframe_api"></script>
+
+<!-- Your main site logic -->
 <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
 
 </body>
