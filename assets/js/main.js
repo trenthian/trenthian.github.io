@@ -15,7 +15,7 @@ const iframe = document.getElementById("mainVideo");
 const strip = document.getElementById("videoStrip");
 
 function setVideo(id) {
-  iframe.src = `https://www.youtube.com/embed/${id}`;
+  iframe.src = `https://www.youtube.com/embed/${video.id}?rel=0&modestbranding=1`;
 }
 
 videos.forEach((id, index) => {
