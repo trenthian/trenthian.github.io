@@ -9,10 +9,6 @@
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 </head>
 
-  <!-- MODAL -->
-<div id="modal" class="modal hidden">
-  <div class="modal-inner" id="modalContent"></div>
-</div>
 <body>
 
 <header class="nav">
@@ -30,23 +26,12 @@
   {{ content }}
 </main>
 
-<!-- Modal Overlay -->
-<div id="modal" class="modal hidden">
+<!-- ==========================================================
+     MODAL SYSTEM 
+     ========================================================== -->
 
-  <div class="modal-window">
-
-    <button
-      id="modalClose"
-      class="modal-close"
-      type="button"
-      aria-label="Close">
-      ✕
-    </button>
-
-    <div id="modalContent"></div>
-
-  </div>
-
+<div id="modal" class="modal">
+  <div class="modal-inner" id="modalInner"></div>
 </div>
 
 <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
