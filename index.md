@@ -16,13 +16,14 @@ layout: default
 <section id="videos" class="section">
   <h2>Featured Video</h2>
 
-  <div class="card video-wrapper">
-    <iframe
-      id="mainVideo"
-      src="https://www.youtube.com/embed/ypbA6h2ZgyQ"
-      allowfullscreen>
-    </iframe>
-  </div>
+<div class="card video-wrapper">
+  <iframe
+    id="mainVideo"
+    src="https://www.youtube.com/embed/ypbA6h2ZgyQ?rel=0&modestbranding=1"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen>
+  </iframe>
+</div>
 
   <div class="video-strip" id="videoStrip"></div>
 </section>
