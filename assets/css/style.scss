@@ -38,9 +38,13 @@
 html {
   scroll-behavior: smooth;
 
-  /* ✅ prevents layout shift when scrollbar disappears */
+  /* prevents layout shift when scrollbar disappears */
   overflow-y: scroll;
   scrollbar-gutter: stable;
+
+  /* Firefox scrollbar */
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent-soft) var(--bg);
 }
 
 body {
@@ -154,8 +158,9 @@ main {
   padding: 22px;
   text-align: center;
 
-  transition: transform var(--transition), box-shadow var(--transition);
   cursor: pointer;
+
+  transition: transform var(--transition), box-shadow var(--transition);
 }
 
 .card:hover {
@@ -207,12 +212,13 @@ main {
 }
 
 /* ==========================================================
-   MODAL — FIXED + SMOOTH + NO LAYOUT SHIFT
+   MODAL
    ========================================================== */
 
 .modal {
   position: fixed;
   inset: 0;
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -229,13 +235,7 @@ main {
   z-index: 5000;
 }
 
-/* IMPORTANT: keeps scrollbar space stable */
-body.modal-open {
-  overflow: hidden;
-  padding-right: 0; /* prevents shift */
-}
-
-/* ACTIVE */
+/* ACTIVE STATE */
 .modal.show {
   background: rgba(0,0,0,0.75);
   opacity: 1;
@@ -272,3 +272,42 @@ body.modal-open {
   border-radius: 12px;
   margin: 16px 0;
 }
+
+/* ==========================================================
+   CUSTOM SCROLLBAR — FIX RESTORED
+   ========================================================== */
+
+/* Chrome / Edge / Safari */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg);
+  border-left: 1px solid var(--border);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    180deg,
+    var(--accent-soft),
+    var(--accent-mid)
+  );
+  border-radius: 10px;
+  border: 2px solid var(--bg);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(
+    180deg,
+    var(--accent-mid),
+    var(--accent-strong)
+  );
+}
+
+::-webkit-scrollbar-corner {
+  background: var(--bg);
+}
+
+/* Firefox fallback already handled in html {} */
