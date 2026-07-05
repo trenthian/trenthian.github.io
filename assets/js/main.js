@@ -15,20 +15,26 @@ const iframe = document.getElementById("mainVideo");
 const strip = document.getElementById("videoStrip");
 
 function setVideo(id) {
-  iframe.src = `https://www.youtube.com/embed/${video.id}?rel=0&modestbranding=1`;
+  if (!iframe) return;
+
+  iframe.src = `https://www.youtube.com/embed/${id}?rel=0&modestbranding=1`;
 }
 
-videos.forEach((id, index) => {
-  const el = document.createElement("div");
-  el.className = "video-thumb";
+if (strip && iframe) {
 
-  el.innerHTML = `
-    <img src="https://img.youtube.com/vi/${id}/hqdefault.jpg">
-  `;
+  videos.forEach((id, index) => {
+    const el = document.createElement("div");
+    el.className = "video-thumb";
 
-  el.addEventListener("click", () => setVideo(id));
+    el.innerHTML = `
+      <img src="https://img.youtube.com/vi/${id}/hqdefault.jpg" alt="">
+    `;
 
-  strip.appendChild(el);
+    el.addEventListener("click", () => setVideo(id));
 
-  if (index === 0) setVideo(id);
-});
+    strip.appendChild(el);
+
+    if (index === 0) setVideo(id);
+  });
+
+}
