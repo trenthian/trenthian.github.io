@@ -103,37 +103,36 @@ document.addEventListener("keydown", (e) => {
   }
 });
   
-  /* ==========================================================
-     TEST CARD
-     ========================================================== */
+/* ==========================================================
+   MODAL CARDS
+   ========================================================== */
 
-  const firstCard = document.querySelector(".card");
+document.querySelectorAll(".modal-card").forEach(card => {
 
-  if (firstCard) {
+  card.style.cursor = "pointer";
 
-    firstCard.style.cursor = "pointer";
+  card.addEventListener("click", () => {
 
-    firstCard.addEventListener("click", () => {
+    openModal(`
 
-      openModal(`
-        <h2>Test Modal</h2>
+      <h2>${card.dataset.title}</h2>
 
-        <p>
-          Congratulations!
-          Your modal system is now working.
-        </p>
+      ${
+        card.dataset.image
+          ? `<img
+              src="${card.dataset.image}"
+              style="
+                width:100%;
+                border-radius:12px;
+                margin:18px 0;
+              ">`
+          : ""
+      }
 
-        <img
-          src="https://img.youtube.com/vi/ypbA6h2ZgyQ/maxresdefault.jpg">
+      <p>${card.dataset.description}</p>
 
-        <p>
-          Eventually every project card will display completely different
-          content here without leaving the page.
-        </p>
-      `);
+    `);
 
-    });
-
-  }
+  });
 
 });
