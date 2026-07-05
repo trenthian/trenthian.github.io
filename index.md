@@ -38,6 +38,9 @@ layout: default
   </div>
 
   <div class="video-strip" id="videoStrip"></div>
+  
+ <!-- NEW: NOTES PANEL -->
+  <div id="videoNotes" class="video-notes"></div>
 
 </section>
 
