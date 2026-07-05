@@ -14,7 +14,7 @@ layout: default
 </section>
 
 <section id="videos" class="section">
-  <h2>Video Evidence</h2>         <h4>Change video settings to higher quality where desired and available.</h4>
+  <h2>Video Evidence</h2>      Change video settings to higher quality where desired and available.
 <div class="card video-wrapper">
   <iframe
     id="mainVideo"
