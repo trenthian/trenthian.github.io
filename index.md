@@ -15,7 +15,7 @@ layout: default
 
 <section id="videos" class="section">
   <h2>Video Evidence</h2>      
-  Change youtube video settings to higher quality where desired and available.
+  <h4>Change youtube video settings to higher quality where desired and available.</h4>
 <div class="card video-wrapper">
   <iframe
     id="mainVideo"
