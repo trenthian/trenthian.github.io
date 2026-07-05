@@ -42,53 +42,55 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  /* ==========================================================
-     MODAL SYSTEM (FIXED)
-     ========================================================== */
+/* ==========================================================
+   MODAL SYSTEM (FIXED + SAFE)
+   ========================================================== */
 
-  const modal = document.getElementById("modal");
-  const modalInner = document.getElementById("modalInner");
+const modal = document.getElementById("modal");
+const modalInner = document.getElementById("modalInner");
 
-  function openModal(html) {
-    if (!modal || !modalInner) return;
-
-    modalInner.innerHTML = html;
-
-    modal.classList.add("show");
-    document.body.classList.add("modal-open");
+function openModal(html) {
+  if (!modal || !modalInner) {
+    console.warn("Modal elements missing in HTML");
+    return;
   }
 
-  function closeModal() {
-    if (!modal) return;
+  modalInner.innerHTML = html;
 
-    modal.classList.remove("show");
-    document.body.classList.remove("modal-open");
-  }
+  modal.classList.add("show");
+  document.body.classList.add("modal-open");
+}
 
-  /* close background click */
-  if (modal) {
-    modal.addEventListener("click", (e) => {
-      if (e.target === modal) closeModal();
-    });
-  }
+function closeModal() {
+  if (!modal || !modalInner) return;
 
-  /* ESC close */
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") closeModal();
+  modal.classList.remove("show");
+  document.body.classList.remove("modal-open");
+
+  modalInner.innerHTML = "";
+}
+
+/* close background click */
+if (modal) {
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) closeModal();
   });
+}
 
-  /* ==========================================================
-     CARD SYSTEM → MODALS
-     ========================================================== */
+/* ESC key */
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") closeModal();
+});
 
-  document.querySelectorAll(".modal-card").forEach(card => {
-    card.addEventListener("click", () => {
-      openModal(`
-        <h2>${card.dataset.title || ""}</h2>
-        ${card.dataset.image ? `<img src="${card.dataset.image}">` : ""}
-        <p>${card.dataset.description || ""}</p>
-      `);
-    });
+/* CARD → MODAL */
+document.querySelectorAll(".modal-card").forEach(card => {
+  card.addEventListener("click", () => {
+    openModal(`
+      <h2>${card.dataset.title || ""}</h2>
+      ${card.dataset.image ? `<img src="${card.dataset.image}" />` : ""}
+      <p>${card.dataset.description || ""}</p>
+    `);
   });
+});
 
 });
