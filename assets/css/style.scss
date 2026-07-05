@@ -317,3 +317,45 @@ a:hover {
     scroll-behavior: auto !important;
   }
 }
+
+/* ==========================================================
+   MODAL SYSTEM
+   ========================================================== */
+
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.72);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 24px;
+}
+
+.modal.hidden {
+  display: none;
+}
+
+.modal-inner {
+  width: min(900px, 100%);
+  max-height: 85vh;
+  overflow-y: auto;
+
+  background: var(--panel, #0b1220);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 22px;
+
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+}
+
+/* optional: nicer scroll inside modal */
+.modal-inner::-webkit-scrollbar {
+  width: 10px;
+}
+
+.modal-inner::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 10px;
+}
