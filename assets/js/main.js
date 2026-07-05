@@ -62,56 +62,47 @@ document.addEventListener("DOMContentLoaded", () => {
 
   }
 
-  /* ==========================================================
-     MODAL SYSTEM
-     ========================================================== */
+ /* ==========================================================
+   MODAL SYSTEM (FIXED SCROLL BEHAVIOR)
+   ========================================================== */
 
-  const modal = document.getElementById("modal");
-  const modalContent = document.getElementById("modalContent");
-  const modalClose = document.getElementById("modalClose");
+const modal = document.getElementById("modal");
+const modalContent = document.getElementById("modalContent");
 
-  function openModal(html) {
+function openModal(html) {
+  if (!modal || !modalContent) return;
 
-    modalContent.innerHTML = html;
+  modalContent.innerHTML = html;
+  modal.classList.remove("hidden");
 
-    modal.classList.remove("hidden");
+  document.body.style.overflow = "hidden";
+}
 
-    document.body.style.overflow = "hidden";
+function closeModal() {
+  if (!modal || !modalContent) return;
 
-  }
+  modal.classList.add("hidden");
+  modalContent.innerHTML = "";
 
-  function closeModal() {
+  document.body.style.overflow = "";
+}
 
-    modal.classList.add("hidden");
-
-    modalContent.innerHTML = "";
-
-    document.body.style.overflow = "";
-
-  }
-
-  modalClose.addEventListener("click", closeModal);
-
-  modal.addEventListener("click", (event) => {
-
-    if (event.target === modal) {
-
+/* close on background click */
+if (modal) {
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) {
       closeModal();
-
     }
-
   });
+}
 
-  document.addEventListener("keydown", (event) => {
-
-    if (event.key === "Escape") {
-
-      closeModal();
-
-    }
-
-  });
-
+/* ESC key */
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") {
+    closeModal();
+  }
+});
+  
   /* ==========================================================
      TEST CARD
      ========================================================== */
