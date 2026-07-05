@@ -398,3 +398,47 @@ a:hover {
 .modal-inner::-webkit-scrollbar-thumb:hover {
   background: var(--accent);
 }
+
+/* ==========================================================
+   CUSTOM SCROLLBAR (PURPLE SLATE THEME)
+   ========================================================== */
+
+/* Firefox */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent-soft) var(--bg);
+}
+
+/* WebKit (Chrome, Edge, Safari) */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg);
+  border-left: 1px solid var(--border);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    180deg,
+    var(--accent-soft),
+    var(--accent-mid)
+  );
+  border-radius: 10px;
+
+  border: 2px solid var(--bg);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(
+    180deg,
+    var(--accent-mid),
+    var(--accent-strong)
+  );
+}
+
+::-webkit-scrollbar-corner {
+  background: var(--bg);
+}
