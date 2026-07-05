@@ -30,7 +30,7 @@ layout: default
 
 <section id="videos" class="section">
   <h2>Video Evidence</h2>      
-  <h4>Change youtube video settings to higher quality where desired and available.</h4>
+  <h4>Selected music, sound, and development work.</h4>
 <div class="card video-wrapper">
   <iframe
     id="mainVideo"
