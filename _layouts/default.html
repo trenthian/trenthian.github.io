@@ -11,10 +11,6 @@
 
 <body>
 
-<!-- ==========================================================
-     NAVIGATION
-     ========================================================== -->
-
 <header class="nav">
   <div class="nav-inner">
     <a href="#top">Home</a>
@@ -26,30 +22,24 @@
   </div>
 </header>
 
-<!-- ==========================================================
-     MAIN CONTENT
-     ========================================================== -->
-
 <main id="top">
   {{ content }}
 </main>
 
-<!-- ==========================================================
-     MODAL SYSTEM
-     ========================================================== -->
+<!-- =========================================================
+     MODAL
+     ========================================================= -->
+<div id="modal" class="modal hidden">
 
-<div id="modal" class="modal">
-  <div class="modal-inner" id="modalInner"></div>
+  <div class="modal-inner" id="modalInner">
+    <!-- injected content goes here -->
+  </div>
+
 </div>
 
-<!-- ==========================================================
-     SCRIPTS
-     ========================================================== -->
-
-<!-- YouTube IFrame API (REQUIRED for Option B video system) -->
+<!-- YouTube IFrame API (needed for inactivity dimming) -->
 <script src="https://www.youtube.com/iframe_api"></script>
 
-<!-- Your main site logic -->
 <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
 
 </body>
