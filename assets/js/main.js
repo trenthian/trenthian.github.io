@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     {
       id: "50X2SWe-oT4",
-      notes: "OCRemix Street Fighter 2 Remix featuring arrangements of all Shoto Fighters centered around Ryu's stage bgm. \nFeaturing Jon "The Duke" St. John as 'The Demon'"
+      notes: "OCRemix Street Fighter 2 Remix featuring arrangements of all Shoto Fighters centered around Ryu's stage bgm. \nFeaturing Jon 'The Duke' St. John as 'The Demon'"
     },
     {
       id: "yByVoyZ8utE",
