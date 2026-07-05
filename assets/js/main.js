@@ -136,3 +136,5 @@ document.querySelectorAll(".modal-card").forEach(card => {
   });
 
 });
+
+});                         
