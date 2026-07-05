@@ -4,11 +4,11 @@ layout: default
 ---
 
 <section id="about" class="section">
-  <h1>About Me</h1>
+  <h1>The Stellar Stoat</h1>
 
   <div class="card">
     <p>
-      Portfolio developer focused on interactive systems, design, and multimedia experiences.
+      Portfolio space for one starry stoat.
     </p>
   </div>
 </section>
