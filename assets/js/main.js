@@ -22,167 +22,73 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function setVideo(id) {
     if (!iframe) return;
-
-    iframe.src =
-      `https://www.youtube.com/embed/${id}?rel=0&modestbranding=1`;
+    iframe.src = `https://www.youtube.com/embed/${id}?rel=0&modestbranding=1`;
   }
 
   if (iframe && strip) {
-
     videos.forEach((id, index) => {
-
       const thumb = document.createElement("div");
       thumb.className = "video-thumb";
 
-      thumb.innerHTML = `
-        <img
-          src="https://img.youtube.com/vi/${id}/hqdefault.jpg"
-          alt="">
-      `;
+      thumb.innerHTML = `<img src="https://img.youtube.com/vi/${id}/hqdefault.jpg">`;
 
       thumb.addEventListener("click", () => {
-
         setVideo(id);
-
-        document
-          .querySelectorAll(".video-thumb")
-          .forEach(t => t.classList.remove("active"));
-
-        thumb.classList.add("active");
-
       });
 
       strip.appendChild(thumb);
 
-      if (index === 0) {
-        setVideo(id);
-        thumb.classList.add("active");
-      }
-
+      if (index === 0) setVideo(id);
     });
-
   }
 
   /* ==========================================================
-     MODAL SYSTEM
+     MODAL SYSTEM (FIXED)
      ========================================================== */
 
   const modal = document.getElementById("modal");
-  const modalContent = document.getElementById("modalContent");
-
-  if (!modal || !modalContent) return;
-
-  let modalOpen = false;
+  const modalInner = document.getElementById("modalInner");
 
   function openModal(html) {
+    if (!modal || !modalInner) return;
 
-    modalContent.innerHTML = html;
+    modalInner.innerHTML = html;
 
     modal.classList.add("show");
-
-    document.body.style.overflow = "hidden";
-
-    modalOpen = true;
-
+    document.body.classList.add("modal-open");
   }
 
   function closeModal() {
-
-    if (!modalOpen) return;
+    if (!modal) return;
 
     modal.classList.remove("show");
-
-    modalOpen = false;
-
-    setTimeout(() => {
-
-      modalContent.innerHTML = "";
-
-      document.body.style.overflow = "";
-
-    }, 240);
-
+    document.body.classList.remove("modal-open");
   }
 
-  /* Click outside */
+  /* close background click */
+  if (modal) {
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) closeModal();
+    });
+  }
 
-  modal.addEventListener("click", (event) => {
-
-    if (event.target === modal) {
-
-      closeModal();
-
-    }
-
-  });
-
-  /* ESC */
-
-  document.addEventListener("keydown", (event) => {
-
-    if (event.key === "Escape") {
-
-      closeModal();
-
-    }
-
+  /* ESC close */
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeModal();
   });
 
   /* ==========================================================
-     MODAL CARDS
+     CARD SYSTEM → MODALS
      ========================================================== */
 
   document.querySelectorAll(".modal-card").forEach(card => {
-
-    card.style.cursor = "pointer";
-
     card.addEventListener("click", () => {
-
-      const title =
-        card.dataset.title || "";
-
-      const description =
-        card.dataset.description || "";
-
-      const image =
-        card.dataset.image || "";
-
-      const video =
-        card.dataset.video || "";
-
-      let html = "";
-
-      html += `<h2>${title}</h2>`;
-
-      if (image) {
-
-        html += `
-          <img
-            src="${image}"
-            alt="">
-        `;
-
-      }
-
-      if (video) {
-
-        html += `
-          <div class="video-wrapper">
-            <iframe
-              src="https://www.youtube.com/embed/${video}?rel=0&modestbranding=1"
-              allowfullscreen>
-            </iframe>
-          </div>
-        `;
-
-      }
-
-      html += `<p>${description}</p>`;
-
-      openModal(html);
-
+      openModal(`
+        <h2>${card.dataset.title || ""}</h2>
+        ${card.dataset.image ? `<img src="${card.dataset.image}">` : ""}
+        <p>${card.dataset.description || ""}</p>
+      `);
     });
-
   });
 
 });
