@@ -1,7 +1,14 @@
 const videos = [
   "ypbA6h2ZgyQ",
-  "dQw4w9WgXcQ",
-  "M7lc1UVf-VE"
+  "50X2SWe-oT4",
+  "yByVoyZ8utE",
+  "GxqwHcMsl90",
+  "v2Ajf3hrWUo",
+  "dN8fMuBJbd8",
+  "Coxuro26mBI",
+  "VZBxBqHebnk",
+  "ieHUqXKRMTE",
+  "48u1pQCifcw"
 ];
 
 const iframe = document.getElementById("mainVideo");
