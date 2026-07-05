@@ -171,6 +171,17 @@ main {
   box-shadow: 0 0 30px var(--accent-mid);
 }
 
+.skill-list {
+  margin: 12px 0 0;
+  padding-left: 18px;
+  text-align: left;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.skill-list li {
+  margin-bottom: 4px;
+}
 /* ==========================================================
    GRID
    ========================================================== */
