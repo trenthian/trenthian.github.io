@@ -6,11 +6,22 @@ layout: default
 <section id="about" class="section">
   <h1>The Stellar Stoat</h1>
 
-  <div class="card">
-    <p>
-      Portfolio space for one starry stoat.
-    </p>
-  </div>
+  <div
+  class="card modal-card"
+
+  data-title="About Me"
+
+  data-description="Portfolio space for one Starry Stoat."
+
+  data-image="https://img.youtube.com/vi/ypbA6h2ZgyQ/maxresdefault.jpg"
+
+  data-video="">
+
+  <p>
+    Portfolio developer focused on interactive systems, design, and multimedia experiences.
+  </p>
+
+</div>
 </section>
 
 <section id="videos" class="section">
