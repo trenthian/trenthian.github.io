@@ -153,7 +153,16 @@ layout: default
 
   <div class="card">
 
-    <p>Linktree: https://linktr.ee/trenthian</p>
+    <p>
+      Linktree:
+            <a
+        href="https://linktr.ee/trenthian"
+        target="_blank">
+
+        github.com/trenthian
+
+      </a>
+      </p>
 
     <p>
 
