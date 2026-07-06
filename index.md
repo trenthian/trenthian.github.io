@@ -49,46 +49,34 @@ layout: default
 
   <div class="grid">
 
-    <div
-      class="card modal-card"
-      data-title="Music"
-      data-description="Composition, arranging, orchestration, production, recording, and music direction."
-    >
-
+    <div class="card">
       <strong>Music</strong>
 
       <div class="skill-items">
-        Writing • Arranging • Production • Recording
+        <div>Writing <span>•</span> Arranging</div>
+        <div>Production <span>•</span> Recording</div>
       </div>
-
     </div>
 
-    <div
-      class="card modal-card"
-      data-title="Audio"
-      data-description="Sound design, recording, Foley, production, and audio direction."
-    >
-
+    <div class="card">
       <strong>Audio</strong>
 
       <div class="skill-items">
-        Design • Recording • Foley • Direction • Production
+        <div>Design <span>•</span> Recording</div>
+        <div>Foley <span>•</span> Direction</div>
+        <div>Production</div>
       </div>
-
     </div>
 
-    <div
-      class="card modal-card"
-      data-title="Game Development"
-      data-description="Gameplay systems, UX/UI, worldbuilding, narrative design, and production."
-    >
-
+    <div class="card">
       <strong>Game Development</strong>
 
       <div class="skill-items">
-        Gameplay Design • Scenario Writing • Story Development • UX / UI • Worldbuilding • Direction • Production
+        <div>Gameplay Design <span>•</span> Scenario Writing</div>
+        <div>Story Development <span>•</span> UX/UI</div>
+        <div>Worldbuilding</div>
+        <div>Direction <span>•</span> Production</div>
       </div>
-
     </div>
 
   </div>
@@ -101,24 +89,21 @@ layout: default
 
   <div class="grid">
 
-    <div
-      class="card modal-card"
+    <div class="card modal-card"
       data-title="Project One"
       data-description="Project information coming soon."
     >
       Project One
     </div>
 
-    <div
-      class="card modal-card"
+    <div class="card modal-card"
       data-title="Project Two"
       data-description="Project information coming soon."
     >
       Project Two
     </div>
 
-    <div
-      class="card modal-card"
+    <div class="card modal-card"
       data-title="Project Three"
       data-description="Project information coming soon."
     >
@@ -139,7 +124,9 @@ layout: default
 
     <p>
       GitHub:
-      <a href="https://github.com/trenthian" target="_blank">github.com/trenthian</a>
+      <a href="https://github.com/trenthian" target="_blank">
+        github.com/trenthian
+      </a>
     </p>
 
   </div>
