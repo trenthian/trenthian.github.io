@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     {
       id: "50X2SWe-oT4",
-      notes: "OCRemix Street Fighter 2 Remix featuring arrangements of all Shoto Fighters centered around Ryu's stage bgm. \nFeaturing Jon 'The Duke' St. John as 'The Demon'"
+      notes: "OCRemix Street Fighter 2 Remix featuring arrangements of all Shoto Fighters centered around Ryu's stage bgm.\nFeaturing Jon 'The Duke' St. John as 'The Demon'."
     },
     {
       id: "yByVoyZ8utE",
@@ -19,31 +19,31 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     {
       id: "GxqwHcMsl90",
-      notes: "Scoring a Character Monologue - Arrangement of Gnarls Barkley 'Crazy' - Actor James McNicholas"
+      notes: "Scoring a Character Monologue. Arrangement of Gnarls Barkley 'Crazy'. Actor: James McNicholas."
     },
     {
       id: "v2Ajf3hrWUo",
-      notes: "Collected Gameplay Compilation made into entertainment. Video Editting and Production"
+      notes: "Collected gameplay compilation edited into an entertainment video. Video editing and production."
     },
     {
       id: "dN8fMuBJbd8",
-      notes: "Collected Gameplay Compilation made into entertainment. Video Editting and Production. \nArrangement of Music from the game Archeage by Trenthian/The Stellar Stoat"
+      notes: "Collected gameplay compilation edited into an entertainment video.\nArrangement of music from ArcheAge by Trenthian / The Stellar Stoat."
     },
     {
       id: "Coxuro26mBI",
-      notes: "Film Scoring competition with HBO's Westwood."
+      notes: "Film scoring competition with HBO's Westworld."
     },
     {
       id: "VZBxBqHebnk",
-      notes: "OcRemix Arrangement of Forgotten Days, from Suikoden."
+      notes: "OCRemix arrangement of Forgotten Days from Suikoden."
     },
     {
       id: "ieHUqXKRMTE",
-      notes: "High Quality Arrangement of music from Jurassic Park for a Special Video from the internet that lacked the soundtrack."
+      notes: "High quality arrangement of music from Jurassic Park created for a special internet video that originally lacked the soundtrack."
     },
     {
       id: "48u1pQCifcw",
-      notes: "Original Music by the Stellar Stoat/Trenthian."
+      notes: "Original music by The Stellar Stoat / Trenthian."
     }
   ];
 
@@ -52,12 +52,26 @@ document.addEventListener("DOMContentLoaded", () => {
   const notesPanel = document.getElementById("videoNotes");
 
   function setVideo(video) {
+
     if (!iframe) return;
-    iframe.src = `https://www.youtube.com/embed/${video.id}?rel=0&modestbranding=1`;
+
+    iframe.src =
+      `https://www.youtube.com/embed/${video.id}?rel=0&modestbranding=1`;
 
     if (notesPanel) {
       notesPanel.textContent = video.notes || "";
     }
+
+    document.querySelectorAll(".video-thumb").forEach(t =>
+      t.classList.remove("active")
+    );
+
+    const active = document.querySelector(`[data-video="${video.id}"]`);
+
+    if (active) {
+      active.classList.add("active");
+    }
+
   }
 
   if (iframe && strip) {
@@ -65,10 +79,15 @@ document.addEventListener("DOMContentLoaded", () => {
     videos.forEach((video, index) => {
 
       const thumb = document.createElement("div");
+
       thumb.className = "video-thumb";
 
+      thumb.dataset.video = video.id;
+
       thumb.innerHTML = `
-        <img src="https://img.youtube.com/vi/${video.id}/hqdefault.jpg">
+        <img
+          src="https://img.youtube.com/vi/${video.id}/hqdefault.jpg"
+          alt="Video Thumbnail">
       `;
 
       thumb.addEventListener("click", () => {
@@ -77,64 +96,89 @@ document.addEventListener("DOMContentLoaded", () => {
 
       strip.appendChild(thumb);
 
-      if (index === 0) setVideo(video);
+      if (index === 0) {
+        setVideo(video);
+      }
 
     });
 
   }
 
   /* ==========================================================
-     MODAL SYSTEM (FIXED + SAFE)
+     MODAL
      ========================================================== */
 
   const modal = document.getElementById("modal");
   const modalInner = document.getElementById("modalInner");
 
   function openModal(html) {
-    if (!modal || !modalInner) {
-      console.warn("Modal elements missing in HTML");
-      return;
-    }
+
+    if (!modal || !modalInner) return;
 
     modalInner.innerHTML = html;
 
     modal.classList.add("show");
+
     document.body.classList.add("modal-open");
+
   }
 
   function closeModal() {
+
     if (!modal || !modalInner) return;
 
     modal.classList.remove("show");
+
     document.body.classList.remove("modal-open");
 
     modalInner.innerHTML = "";
+
   }
 
   if (modal) {
-    modal.addEventListener("click", (e) => {
-      if (e.target === modal) closeModal();
+
+    modal.addEventListener("click", (event) => {
+
+      if (event.target === modal) {
+        closeModal();
+      }
+
     });
+
   }
 
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") closeModal();
+  document.addEventListener("keydown", (event) => {
+
+    if (event.key === "Escape") {
+      closeModal();
+    }
+
   });
 
   /* ==========================================================
-     CARD → MODAL
+     CARD MODALS
      ========================================================== */
 
   document.querySelectorAll(".modal-card").forEach(card => {
+
     card.addEventListener("click", () => {
-      openModal(`
+
+      const html = `
         <h2>${card.dataset.title || ""}</h2>
 
-        ${card.dataset.image ? `<img src="${card.dataset.image}" />` : ""}
+        ${
+          card.dataset.image
+            ? `<img src="${card.dataset.image}" alt="">`
+            : ""
+        }
 
         <p>${card.dataset.description || ""}</p>
-      `);
+      `;
+
+      openModal(html);
+
     });
+
   });
 
 });
