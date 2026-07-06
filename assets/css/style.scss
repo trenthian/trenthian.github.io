@@ -142,6 +142,7 @@ p {
 
 }
 
+
 /* ==========================================================
    LINKS
    ========================================================== */
@@ -730,5 +731,56 @@ html {
     transition: none !important;
     scroll-behavior: auto !important;
   }
+
+}
+/* ==========================================================
+   GLOBAL SPACING TUNING PASS
+   ========================================================== */
+
+.section {
+
+  margin-bottom: 64px;
+
+}
+
+/* tighter content rhythm inside cards */
+
+.card {
+
+  padding: 20px;
+
+}
+
+/* reduce paragraph heaviness */
+
+p {
+
+  margin: 10px 0;
+
+  color: var(--muted);
+
+  line-height: 1.65;
+
+}
+
+/* improve grid breathing room */
+
+.grid {
+
+  gap: 14px;
+
+}
+
+/* video section spacing alignment */
+
+.video-strip {
+
+  margin-top: 12px;
+
+}
+
+.video-notes {
+
+  margin-top: 12px;
 
 }
