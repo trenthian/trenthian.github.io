@@ -61,50 +61,44 @@ layout: default
 
   <div class="grid">
 
-    <div class="card">
+    <div class="card modal-card"
+      data-title="Music"
+      data-description="Coming soon.">
 
       <strong>Music</strong>
 
       <div class="skill-items">
-
         <div>Writing <span>•</span> Arranging</div>
-
         <div>Production <span>•</span> Recording</div>
-
       </div>
 
     </div>
 
-    <div class="card">
+    <div class="card modal-card"
+      data-title="Audio"
+      data-description="Coming soon.">
 
       <strong>Audio</strong>
 
       <div class="skill-items">
-
         <div>Design <span>•</span> Recording</div>
-
         <div>Foley <span>•</span> Direction</div>
-
         <div>Production</div>
-
       </div>
 
     </div>
 
-    <div class="card">
+    <div class="card modal-card"
+      data-title="Game Development"
+      data-description="Coming soon.">
 
       <strong>Game Development</strong>
 
       <div class="skill-items">
-
         <div>Gameplay Design <span>•</span> Scenario Writing</div>
-
-        <div>Story Development <span>•</span> UX / UI</div>
-
+        <div>Story Development <span>•</span> UX/UI</div>
         <div>Worldbuilding</div>
-
         <div>Direction <span>•</span> Production</div>
-
       </div>
 
     </div>
