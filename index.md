@@ -153,7 +153,7 @@ layout: default
 
   <div class="card">
 
-    <p>Email: example@email.com</p>
+    <p>Linktree: [https:/](https://linktr.ee/trenthian)</p>
 
     <p>
 
