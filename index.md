@@ -159,7 +159,7 @@ layout: default
         href="https://linktr.ee/trenthian"
         target="_blank">
 
-        github.com/trenthian
+        linktree/trenthian
 
       </a>
       </p>
