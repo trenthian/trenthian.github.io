@@ -1,8 +1,5 @@
----
----
-
 /* ==========================================================
-   SHEIKAH PORTFOLIO SYSTEM — PURPLE SLATE HYBRID
+   SHEIKAH PORTFOLIO SYSTEM — CLEAN CORE BUILD
    ========================================================== */
 
 /* ==========================================================
@@ -44,7 +41,6 @@ html {
   overflow-y: scroll;
   scrollbar-gutter: stable;
 
-  /* Firefox */
   scrollbar-width: thin;
   scrollbar-color: var(--accent-soft) var(--bg);
 
@@ -75,19 +71,9 @@ body {
 
 }
 
-/* Prevent page jump while modal is open */
-
-body.modal-open {
-
-  overflow: hidden;
-
-}
-
 /* ==========================================================
-   TYPOGRAPHY SYSTEM — REFINED ELEGANCE PASS
+   TYPOGRAPHY SYSTEM
    ========================================================== */
-
-/* MAIN TITLE */
 
 h1 {
 
@@ -102,8 +88,6 @@ h1 {
   color: rgba(217, 227, 240, 0.92);
 
 }
-
-/* SECTION HEADERS */
 
 h2 {
 
@@ -125,8 +109,6 @@ h2 {
 
 }
 
-/* subtle underline accent */
-
 h2::after {
 
   content: "";
@@ -145,8 +127,6 @@ h2::after {
 
 }
 
-/* PARAGRAPHS */
-
 p {
 
   margin: 10px 0;
@@ -157,7 +137,9 @@ p {
 
 }
 
-/* LINKS (TEXT LEVEL) */
+/* ==========================================================
+   LINKS + NAV LINKS BASE
+   ========================================================== */
 
 a {
 
@@ -176,7 +158,7 @@ a:hover {
 }
 
 /* ==========================================================
-   NAVIGATION — SOFT FLOAT GLASS STYLE
+   NAVIGATION
    ========================================================== */
 
 .nav {
@@ -202,30 +184,6 @@ a:hover {
 
 }
 
-/* NAV LINKS */
-
-.nav a {
-
-  color: rgba(154, 166, 178, 0.85);
-
-  font-size: 0.92rem;
-
-  letter-spacing: 0.4px;
-
-  text-decoration: none;
-
-  transition: color 160ms ease;
-
-}
-
-.nav a:hover {
-
-  color: var(--accent);
-
-}
-
-/* NAV INNER SPACING (if used) */
-
 .nav-inner {
 
   display: flex;
@@ -238,26 +196,21 @@ a:hover {
 
 }
 
-/* ==========================================================
-   LINKS
-   ========================================================== */
+.nav a {
 
-a {
+  color: rgba(154, 166, 178, 0.85);
+
+  font-size: 0.92rem;
+
+  letter-spacing: 0.4px;
+
+}
+
+.nav a:hover {
 
   color: var(--accent);
 
-  text-decoration: none;
-
-  transition: color var(--transition-fast);
-
 }
-
-a:hover {
-
-  color: white;
-
-}
-
 /* ==========================================================
    MAIN LAYOUT
    ========================================================== */
@@ -268,18 +221,30 @@ main {
 
   margin: 0 auto;
 
-  padding:
-    110px
-    20px
-    70px;
+  padding: 110px 20px 70px;
 
 }
 
 .section {
 
-  margin-bottom: 72px;
+  margin-bottom: 64px;
 
 }
+
+/* ==========================================================
+   GRID
+   ========================================================== */
+
+.grid {
+
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+
+  gap: 14px;
+
+}
+
 /* ==========================================================
    CARD SYSTEM
    ========================================================== */
@@ -288,17 +253,13 @@ main {
 
   position: relative;
 
-  background:
-    linear-gradient(
-      145deg,
-      var(--panel),
-      var(--panel-2)
-    );
+  background: linear-gradient(145deg, var(--panel), var(--panel-2));
 
   border: 1px solid var(--border);
+
   border-radius: var(--radius);
 
-  padding: 22px;
+  padding: 20px;
 
   text-align: center;
 
@@ -313,25 +274,23 @@ main {
 
 }
 
-/* subtle glow */
-
 .card::before {
 
   content: "";
 
   position: absolute;
+
   inset: 0;
 
   pointer-events: none;
 
-  background:
-    radial-gradient(
-      circle at top,
-      var(--accent-soft),
-      transparent 60%
-    );
+  background: radial-gradient(
+    circle at top,
+    var(--accent-soft),
+    transparent 60%
+  );
 
-  opacity: .75;
+  opacity: .45;
 
 }
 
@@ -341,136 +300,28 @@ main {
 
   border-color: var(--accent-strong);
 
-  box-shadow:
-    0 0 28px var(--accent-mid);
+  box-shadow: 0 0 28px var(--accent-mid);
 
 }
 
 /* ==========================================================
-   GRID
+   SKILLS LIST
    ========================================================== */
 
-.grid {
+.skill-list {
 
-  display: grid;
+  margin: 12px 0 0;
 
-  grid-template-columns:
-    repeat(
-      auto-fit,
-      minmax(230px,1fr)
-    );
+  padding-left: 18px;
 
-  gap: 18px;
-
-}
-
-/* ==========================================================
-   SKILL CARDS
-   ========================================================== */
-
-.card strong {
-
-  display: block;
-
-  margin-bottom: 16px;
-
-  color: var(--text);
-
-  font-size: 1.08rem;
-  font-weight: 650;
-
-}
-
-/*
-   Each row becomes:
-
-   Writing • Arranging
-
-   instead of a bulleted list.
-*/
-
-.skill-items {
-
-  display: flex;
-  flex-direction: column;
-
-  gap: 8px;
-
-  margin-top: 10px;
+  text-align: left;
 
   color: var(--muted);
-
-  font-size: .95rem;
 
   line-height: 1.6;
 
 }
 
-.skill-items div {
-
-  display: flex;
-
-  justify-content: center;
-  align-items: center;
-
-  gap: 10px;
-
-  flex-wrap: wrap;
-
-}
-
-/* nicer bullet separators */
-
-.skill-items div span {
-
-  color: var(--accent);
-
-  opacity: .65;
-
-  user-select: none;
-
-}
-
-/* ==========================================================
-   ABOUT CARD
-   ========================================================== */
-
-#about .card {
-
-  max-width: 560px;
-
-  margin: 0 auto;
-
-}
-
-/* ==========================================================
-   PROJECT CARDS
-   ========================================================== */
-
-#projects .card {
-
-  min-height: 120px;
-
-  display: flex;
-
-  justify-content: center;
-  align-items: center;
-
-  font-size: 1.05rem;
-
-}
-
-/* ==========================================================
-   CONTACT CARD
-   ========================================================== */
-
-#contact .card {
-
-  max-width: 600px;
-
-  margin: 0 auto;
-
-}
 /* ==========================================================
    VIDEO SYSTEM
    ========================================================== */
@@ -487,8 +338,6 @@ main {
 
 }
 
-/* strip of thumbnails */
-
 .video-strip {
 
   display: flex;
@@ -497,13 +346,11 @@ main {
 
   overflow-x: auto;
 
-  margin-top: 14px;
+  margin-top: 12px;
 
   padding-bottom: 6px;
 
 }
-
-/* individual thumbnails */
 
 .video-thumb {
 
@@ -519,9 +366,7 @@ main {
 
   border: 1px solid var(--border);
 
-  transition:
-    transform var(--transition-fast),
-    border-color var(--transition-fast);
+  transition: transform var(--transition-fast), border-color var(--transition-fast);
 
 }
 
@@ -543,13 +388,9 @@ main {
 
 }
 
-/* ==========================================================
-   VIDEO NOTES PANEL
-   ========================================================== */
-
 .video-notes {
 
-  margin-top: 14px;
+  margin-top: 12px;
 
   padding: 14px 16px;
 
@@ -557,43 +398,22 @@ main {
 
   border-radius: 10px;
 
-  background:
-    linear-gradient(
-      145deg,
-      var(--panel),
-      var(--panel-2)
-    );
+  background: linear-gradient(145deg, var(--panel), var(--panel-2));
 
   color: var(--muted);
-
-  font-size: 0.95rem;
 
   line-height: 1.6;
 
   white-space: pre-line;
 
 }
-
 /* ==========================================================
-   SCROLLBAR (GLOBAL THEME)
+   SCROLLBAR
    ========================================================== */
-
-/* Firefox */
-
-html {
-
-  scrollbar-width: thin;
-
-  scrollbar-color: var(--accent-soft) var(--bg);
-
-}
-
-/* WebKit browsers */
 
 ::-webkit-scrollbar {
 
   width: 12px;
-
   height: 12px;
 
 }
@@ -635,8 +455,9 @@ html {
   background: var(--bg);
 
 }
+
 /* ==========================================================
-   MODAL SYSTEM (HARDENED + RELIABLE)
+   MODAL SYSTEM
    ========================================================== */
 
 .modal {
@@ -661,16 +482,11 @@ html {
 
   pointer-events: none;
 
-  transition:
-    background 220ms ease,
-    opacity 220ms ease,
-    visibility 220ms ease;
+  transition: 220ms ease;
 
   z-index: 5000;
 
 }
-
-/* ACTIVE STATE */
 
 .modal.show {
 
@@ -684,8 +500,6 @@ html {
 
 }
 
-/* MODAL WINDOW */
-
 .modal-inner {
 
   width: min(900px, 100%);
@@ -694,12 +508,7 @@ html {
 
   overflow-y: auto;
 
-  background:
-    linear-gradient(
-      145deg,
-      var(--panel),
-      var(--panel-2)
-    );
+  background: linear-gradient(145deg, var(--panel), var(--panel-2));
 
   border: 1px solid var(--border);
 
@@ -711,16 +520,11 @@ html {
 
   opacity: 0;
 
-  transition:
-    transform 240ms ease,
-    opacity 240ms ease;
+  transition: transform 240ms ease, opacity 240ms ease;
 
-  box-shadow:
-    0 30px 90px rgba(0,0,0,0.65);
+  box-shadow: 0 30px 90px rgba(0,0,0,0.65);
 
 }
-
-/* OPEN STATE */
 
 .modal.show .modal-inner {
 
@@ -729,8 +533,6 @@ html {
   opacity: 1;
 
 }
-
-/* IMAGE INSIDE MODAL */
 
 .modal-inner img {
 
@@ -750,10 +552,6 @@ html {
 
 @media (max-width: 720px) {
 
-  .nav-inner {
-    gap: 12px;
-  }
-
   main {
     padding-top: 100px;
   }
@@ -765,7 +563,7 @@ html {
 }
 
 /* ==========================================================
-   REDUCED MOTION SUPPORT
+   REDUCED MOTION
    ========================================================== */
 
 @media (prefers-reduced-motion: reduce) {
@@ -774,56 +572,5 @@ html {
     transition: none !important;
     scroll-behavior: auto !important;
   }
-
-}
-/* ==========================================================
-   GLOBAL SPACING TUNING PASS
-   ========================================================== */
-
-.section {
-
-  margin-bottom: 64px;
-
-}
-
-/* tighter content rhythm inside cards */
-
-.card {
-
-  padding: 20px;
-
-}
-
-/* reduce paragraph heaviness */
-
-p {
-
-  margin: 10px 0;
-
-  color: var(--muted);
-
-  line-height: 1.65;
-
-}
-
-/* improve grid breathing room */
-
-.grid {
-
-  gap: 14px;
-
-}
-
-/* video section spacing alignment */
-
-.video-strip {
-
-  margin-top: 12px;
-
-}
-
-.video-notes {
-
-  margin-top: 12px;
 
 }
