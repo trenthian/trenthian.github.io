@@ -80,79 +80,45 @@ body.modal-open{
 }
 
 /* ==========================================================
-   TYPOGRAPHY
+   TYPOGRAPHY (FIXED VISIBILITY + HIERARCHY)
    ========================================================== */
 
-h1{
-
-  margin:0 0 .35em;
-
-  font-size:clamp(2rem,3vw,2.6rem);
-
-  font-weight:500;
-
-  letter-spacing:.04em;
-
-  color:rgba(255,255,255,.94);
-
+h1 {
+  font-size: clamp(2.1rem, 3.2vw, 2.6rem);
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  margin-bottom: 12px;
+  color: var(--text);
 }
 
-h2{
+h2 {
+  margin-top: 56px;
+  margin-bottom: 18px;
+  padding-left: 12px;
+  border-left: 2px solid var(--accent);
 
-  position:relative;
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
 
-  margin:56px 0 20px;
-
-  padding-left:14px;
-
-  font-size:1.45rem;
-
-  font-weight:500;
-
-  letter-spacing:.02em;
-
-  border-left:2px solid var(--accent);
-
+  color: var(--text);
+  position: relative;
 }
 
-h2::after{
-
-  content:"";
-
-  position:absolute;
-
-  left:0;
-
-  bottom:-8px;
-
-  width:40px;
-
-  height:1px;
-
-  background:var(--accent-soft);
-
+h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 36px;
+  height: 1px;
+  background: var(--accent-soft);
 }
 
-p{
-
-  color:var(--muted);
-
-  margin:12px 0;
-
-}
-
-a{
-
-  color:var(--accent);
-
-  text-decoration:none;
-
-}
-
-a:hover{
-
-  color:white;
-
+p {
+  margin: 10px 0;
+  color: var(--muted);
+  line-height: 1.65;
 }
 
 /* ==========================================================
