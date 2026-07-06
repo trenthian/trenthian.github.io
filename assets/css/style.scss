@@ -84,41 +84,48 @@ body.modal-open {
 }
 
 /* ==========================================================
-   TYPOGRAPHY
+   TYPOGRAPHY SYSTEM — REFINED ELEGANCE PASS
    ========================================================== */
 
-h1,
-h2,
-h3 {
-
-  margin: 0;
-
-  color: var(--text);
-
-  font-weight: 650;
-
-}
+/* MAIN TITLE */
 
 h1 {
 
-  font-size: clamp(2rem,3.5vw,2.8rem);
+  font-size: clamp(1.9rem, 3vw, 2.4rem);
 
-  margin-bottom: 12px;
+  font-weight: 520;
+
+  letter-spacing: 0.5px;
+
+  margin-bottom: 10px;
+
+  color: rgba(217, 227, 240, 0.92);
 
 }
+
+/* SECTION HEADERS */
 
 h2 {
 
+  margin-top: 56px;
+
+  margin-bottom: 16px;
+
+  padding-left: 12px;
+
+  border-left: 2px solid var(--accent);
+
+  font-weight: 520;
+
+  letter-spacing: 0.3px;
+
+  color: rgba(217, 227, 240, 0.88);
+
   position: relative;
 
-  margin-top: 64px;
-  margin-bottom: 18px;
-
-  padding-left: 14px;
-
-  border-left: 3px solid var(--accent);
-
 }
+
+/* subtle underline accent */
 
 h2::after {
 
@@ -127,21 +134,109 @@ h2::after {
   position: absolute;
 
   left: 0;
+
   bottom: -6px;
 
-  width: 40px;
+  width: 34px;
+
   height: 1px;
 
   background: var(--accent-soft);
 
 }
 
+/* PARAGRAPHS */
+
 p {
+
+  margin: 10px 0;
 
   color: var(--muted);
 
+  line-height: 1.65;
+
 }
 
+/* LINKS (TEXT LEVEL) */
+
+a {
+
+  color: var(--accent);
+
+  text-decoration: none;
+
+  transition: color 160ms ease;
+
+}
+
+a:hover {
+
+  color: white;
+
+}
+
+/* ==========================================================
+   NAVIGATION — SOFT FLOAT GLASS STYLE
+   ========================================================== */
+
+.nav {
+
+  position: fixed;
+
+  top: 0;
+  left: 0;
+  right: 0;
+
+  z-index: 1000;
+
+  display: flex;
+  justify-content: center;
+
+  padding: 12px 18px;
+
+  background: rgba(5, 10, 18, 0.55);
+
+  backdrop-filter: blur(16px);
+
+  border-bottom: 1px solid rgba(179, 140, 255, 0.12);
+
+}
+
+/* NAV LINKS */
+
+.nav a {
+
+  color: rgba(154, 166, 178, 0.85);
+
+  font-size: 0.92rem;
+
+  letter-spacing: 0.4px;
+
+  text-decoration: none;
+
+  transition: color 160ms ease;
+
+}
+
+.nav a:hover {
+
+  color: var(--accent);
+
+}
+
+/* NAV INNER SPACING (if used) */
+
+.nav-inner {
+
+  display: flex;
+
+  gap: 18px;
+
+  flex-wrap: wrap;
+
+  justify-content: center;
+
+}
 
 /* ==========================================================
    LINKS
@@ -160,58 +255,6 @@ a {
 a:hover {
 
   color: white;
-
-}
-
-/* ==========================================================
-   NAVIGATION
-   ========================================================== */
-
-.nav {
-
-  position: fixed;
-
-  top: 0;
-  left: 0;
-  right: 0;
-
-  z-index: 1000;
-
-  display: flex;
-
-  justify-content: center;
-
-  padding: 14px 18px;
-
-  background: rgba(5,10,18,.78);
-
-  backdrop-filter: blur(14px);
-
-  border-bottom: 1px solid var(--border);
-
-}
-
-.nav-inner {
-
-  display: flex;
-
-  gap: 18px;
-
-  flex-wrap: wrap;
-
-  justify-content: center;
-
-}
-
-.nav a {
-
-  color: var(--muted);
-
-}
-
-.nav a:hover {
-
-  color: var(--accent);
 
 }
 
