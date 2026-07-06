@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,36 +12,57 @@
 
 <body>
 
-<header class="nav">
-  <div class="nav-inner">
-    <a href="#top">Home</a>
-    <a href="#about">About</a>
-    <a href="#videos">Videos</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
+  <!-- ========================================================
+       NAVIGATION
+       ========================================================= -->
+
+  <header class="nav">
+
+    <div class="nav-inner">
+
+      <a href="#top">Home</a>
+      <a href="#about">About</a>
+      <a href="#videos">Videos</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+
+    </div>
+
+  </header>
+
+  <!-- ========================================================
+       MAIN CONTENT
+       ========================================================= -->
+
+  <main id="top">
+    {{ content }}
+  </main>
+
+  <!-- ========================================================
+       MODAL
+       ========================================================= -->
+
+  <div id="modal" class="modal">
+
+    <div class="modal-inner" id="modalInner">
+      <!-- Modal content is injected by main.js -->
+    </div>
+
   </div>
-</header>
 
-<main id="top">
-  {{ content }}
-</main>
+  <!-- ========================================================
+       YOUTUBE IFRAME API
+       ========================================================= -->
 
-<!-- =========================================================
-     MODAL
-     ========================================================= -->
-<div id="modal" class="modal hidden">
+  <script src="https://www.youtube.com/iframe_api"></script>
 
-  <div class="modal-inner" id="modalInner">
-    <!-- injected content goes here -->
-  </div>
+  <!-- ========================================================
+       MAIN SCRIPT
+       ========================================================= -->
 
-</div>
-
-<!-- YouTube IFrame API (needed for inactivity dimming) -->
-<script src="https://www.youtube.com/iframe_api"></script>
-
-<script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+  <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
 
 </body>
+
 </html>
