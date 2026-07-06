@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,57 +11,46 @@
 
 <body>
 
-  <!-- ========================================================
-       NAVIGATION
-       ========================================================= -->
+<!-- =========================================================
+     NAVIGATION
+     ========================================================= -->
+<header class="nav">
+  <div class="nav-inner">
+    <a href="#top">Home</a>
+    <a href="#about">About</a>
+    <a href="#videos">Videos</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </div>
+</header>
 
-  <header class="nav">
+<!-- =========================================================
+     MAIN CONTENT
+     ========================================================= -->
+<main id="top">
+  {{ content }}
+</main>
 
-    <div class="nav-inner">
+<!-- =========================================================
+     MODAL (SINGLE SOURCE OF TRUTH)
+     ========================================================= -->
+<div id="modal" class="modal hidden">
 
-      <a href="#top">Home</a>
-      <a href="#about">About</a>
-      <a href="#videos">Videos</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-
-    </div>
-
-  </header>
-
-  <!-- ========================================================
-       MAIN CONTENT
-       ========================================================= -->
-
-  <main id="top">
-    {{ content }}
-  </main>
-
-  <!-- ========================================================
-       MODAL
-       ========================================================= -->
-
-  <div id="modal" class="modal">
-
-    <div class="modal-inner" id="modalInner">
-      <!-- Modal content is injected by main.js -->
-    </div>
-
+  <div class="modal-inner" id="modalInner">
+    <!-- JS injects content here -->
   </div>
 
-  <!-- ========================================================
-       YOUTUBE IFRAME API
-       ========================================================= -->
+</div>
 
-  <script src="https://www.youtube.com/iframe_api"></script>
+<!-- =========================================================
+     SCRIPTS
+     ========================================================= -->
 
-  <!-- ========================================================
-       MAIN SCRIPT
-       ========================================================= -->
+<!-- YouTube IFrame API (for future use / optional features) -->
+<script src="https://www.youtube.com/iframe_api"></script>
 
-  <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/main.js' | relative_url }}"></script>
 
 </body>
-
 </html>
