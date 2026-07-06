@@ -153,7 +153,7 @@ layout: default
 
   <div class="card">
 
-    <p>Linktree: [https:/](https://linktr.ee/trenthian)</p>
+    <p>[Linktree/trenthian](https://linktr.ee/trenthian)</p>
 
     <p>
 
