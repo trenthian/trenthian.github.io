@@ -38,8 +38,7 @@ layout: default
   </div>
 
   <div class="video-strip" id="videoStrip"></div>
-  
- <!-- NEW: NOTES PANEL -->
+
   <div id="videoNotes" class="video-notes"></div>
 
 </section>
@@ -48,59 +47,48 @@ layout: default
 
   <h2>Skills</h2>
 
-<div class="grid">
+  <div class="grid">
 
-  <div class="card modal-card">
-    <strong>Music</strong>
+    <div
+      class="card modal-card"
+      data-title="Music"
+      data-description="Composition, arranging, orchestration, production, recording, and music direction."
+    >
 
-    <ul class="skill-list">
-      <li>Writing</li>
-      <li>Arranging</li>
-      <li>Production</li>
-      <li>Recording</li>
-    </ul>
-  </div>
+      <strong>Music</strong>
 
-  <div class="card modal-card">
-    <strong>Audio</strong>
+      <div class="skill-items">
+        Writing • Arranging • Production • Recording
+      </div>
 
-    <ul class="skill-list">
-      <li>Design</li>
-      <li>Recording</li>
-      <li>Foley</li>
-      <li>Direction</li>
-      <li>Production</li>
-    </ul>
-  </div>
+    </div>
 
-  <div class="card modal-card">
-    <strong>Game Development</strong>
-
-    <ul class="skill-list">
-      <li>Gameplay Design</li>
-      <li>Scenario Writing</li>
-      <li>Story Development</li>
-      <li>UX / UI</li>
-      <li>Worldbuilding</li>
-      <li>Direction</li>
-      <li>Production</li>
-    </ul>
-  </div>
-
-</div>
-
-    <div class="card modal-card"
+    <div
+      class="card modal-card"
       data-title="Audio"
       data-description="Sound design, recording, Foley, production, and audio direction."
     >
-      Audio
+
+      <strong>Audio</strong>
+
+      <div class="skill-items">
+        Design • Recording • Foley • Direction • Production
+      </div>
+
     </div>
 
-    <div class="card modal-card"
+    <div
+      class="card modal-card"
       data-title="Game Development"
       data-description="Gameplay systems, UX/UI, worldbuilding, narrative design, and production."
     >
-      Game Development
+
+      <strong>Game Development</strong>
+
+      <div class="skill-items">
+        Gameplay Design • Scenario Writing • Story Development • UX / UI • Worldbuilding • Direction • Production
+      </div>
+
     </div>
 
   </div>
@@ -113,21 +101,24 @@ layout: default
 
   <div class="grid">
 
-    <div class="card modal-card"
+    <div
+      class="card modal-card"
       data-title="Project One"
       data-description="Project information coming soon."
     >
       Project One
     </div>
 
-    <div class="card modal-card"
+    <div
+      class="card modal-card"
       data-title="Project Two"
       data-description="Project information coming soon."
     >
       Project Two
     </div>
 
-    <div class="card modal-card"
+    <div
+      class="card modal-card"
       data-title="Project Three"
       data-description="Project information coming soon."
     >
