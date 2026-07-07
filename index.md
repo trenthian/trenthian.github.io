@@ -217,7 +217,7 @@ layout: default
       Linktree:
 
       <a
-        href="https://lintr.ee/trenthian"
+        href="https://linktr.ee/trenthian"
         target="_blank"
       >
 
