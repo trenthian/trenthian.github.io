@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     {
       id: "ypbA6h2ZgyQ",
-      notes: "Scoring Arrangement of Music from The Legend of Zelda Series and added sfx track built from game audio across the franchise. \nArt and Animation: \nXabier Urrutia \nhttps://www.instagram.com/xabier.u/?hl=en \nhttps://www.artstation.com/xabierurrutia \nMusic Score Arrangement, Sound Editing, and Mixing: \nTrenthian(StellarStoat) https://linktr.ee/trenthian"
+      notes: "Scoring Arrangement of Music from The Legend of Zelda Series and added sfx track built from game audio across the franchise. \nArt and Animation Animatic: Xabier Urrutia \nhttps://www.instagram.com/xabier.u/?hl=en \nhttps://www.artstation.com/xabierurrutia \nMusic Score Arrangement, Sound Editing, and Mixing: Trenthian(TheStellarStoat)"
     },
 
     {
