@@ -213,8 +213,20 @@ layout: default
 
 
     <p>
-      Email: example@email.com
+
+      Linktree:
+
+      <a
+        href="https://lintr.ee/trenthian"
+        target="_blank"
+      >
+
+        Linktree/trenthian
+
+      </a>
+
     </p>
+
 
 
     <p>
