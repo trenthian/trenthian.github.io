@@ -5,46 +5,57 @@ document.addEventListener("DOMContentLoaded", () => {
      ========================================================== */
 
   const videos = [
+
     {
       id: "ypbA6h2ZgyQ",
       notes: "Scoring Arrangement of Music from The Legend of Zelda Series and added sfx track built from game audio across the franchise."
     },
+
     {
       id: "50X2SWe-oT4",
-      notes: "OCRemix Street Fighter 2 Remix featuring arrangements of all Shoto Fighters centered around Ryu's stage bgm.\nFeaturing Jon 'The Duke' St. John as 'The Demon'."
+      notes: "OCRemix Street Fighter 2 Remix featuring arrangements of all Shoto Fighters centered around Ryu's stage bgm.\nFeaturing Jon 'The Duke' St. John as 'The Demon'"
     },
+
     {
       id: "yByVoyZ8utE",
       notes: "Improvised piano arrangement of the main theme of Final Fantasy VII."
     },
+
     {
       id: "GxqwHcMsl90",
-      notes: "Scoring a Character Monologue. Arrangement of Gnarls Barkley 'Crazy'. Actor: James McNicholas."
+      notes: "Scoring a Character Monologue - Arrangement of Gnarls Barkley 'Crazy' - Actor James McNicholas"
     },
+
     {
       id: "v2Ajf3hrWUo",
-      notes: "Collected gameplay compilation edited into an entertainment video. Video editing and production."
+      notes: "Collected Gameplay Compilation made into entertainment. Video Editing and Production."
     },
+
     {
       id: "dN8fMuBJbd8",
-      notes: "Collected gameplay compilation edited into an entertainment video.\nArrangement of music from ArcheAge by Trenthian / The Stellar Stoat."
+      notes: "Collected Gameplay Compilation made into entertainment. Video Editing and Production.\nArrangement of music from ArcheAge by Trenthian / The Stellar Stoat."
     },
+
     {
       id: "Coxuro26mBI",
       notes: "Film scoring competition with HBO's Westworld."
     },
+
     {
       id: "VZBxBqHebnk",
       notes: "OCRemix arrangement of Forgotten Days from Suikoden."
     },
+
     {
       id: "ieHUqXKRMTE",
-      notes: "High quality arrangement of music from Jurassic Park created for a special internet video that originally lacked the soundtrack."
+      notes: "High quality arrangement of music from Jurassic Park created for a special fan video."
     },
+
     {
       id: "48u1pQCifcw",
       notes: "Original music by The Stellar Stoat / Trenthian."
     }
+
   ];
 
   const iframe = document.getElementById("mainVideo");
@@ -62,16 +73,6 @@ document.addEventListener("DOMContentLoaded", () => {
       notesPanel.textContent = video.notes || "";
     }
 
-    document.querySelectorAll(".video-thumb").forEach(t =>
-      t.classList.remove("active")
-    );
-
-    const active = document.querySelector(`[data-video="${video.id}"]`);
-
-    if (active) {
-      active.classList.add("active");
-    }
-
   }
 
   if (iframe && strip) {
@@ -82,13 +83,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
       thumb.className = "video-thumb";
 
-      thumb.dataset.video = video.id;
-
-      thumb.innerHTML = `
-        <img
-          src="https://img.youtube.com/vi/${video.id}/hqdefault.jpg"
-          alt="Video Thumbnail">
-      `;
+      thumb.innerHTML =
+        `<img src="https://img.youtube.com/vi/${video.id}/hqdefault.jpg" alt="">`;
 
       thumb.addEventListener("click", () => {
         setVideo(video);
@@ -102,16 +98,81 @@ document.addEventListener("DOMContentLoaded", () => {
 
     });
 
+    /* ==========================================================
+       Horizontal Mouse Wheel Scrolling
+       ========================================================== */
+
+    strip.addEventListener("wheel", (event) => {
+
+      event.preventDefault();
+
+      strip.scrollLeft += event.deltaY;
+
+    }, { passive: false });
+
+    /* ==========================================================
+       Click & Drag Scrolling
+       ========================================================== */
+
+    let isDragging = false;
+    let startX = 0;
+    let scrollStart = 0;
+
+    strip.addEventListener("mousedown", (event) => {
+
+      isDragging = true;
+
+      strip.classList.add("dragging");
+
+      startX = event.pageX;
+
+      scrollStart = strip.scrollLeft;
+
+      document.body.style.userSelect = "none";
+
+    });
+
+    window.addEventListener("mouseup", () => {
+
+      isDragging = false;
+
+      strip.classList.remove("dragging");
+
+      document.body.style.userSelect = "";
+
+    });
+
+    strip.addEventListener("mouseleave", () => {
+
+      isDragging = false;
+
+      strip.classList.remove("dragging");
+
+      document.body.style.userSelect = "";
+
+    });
+
+    strip.addEventListener("mousemove", (event) => {
+
+      if (!isDragging) return;
+
+      event.preventDefault();
+
+      const distance = event.pageX - startX;
+
+      strip.scrollLeft = scrollStart - distance;
+
+    });
+
   }
 
   /* ==========================================================
-     MODAL
+     MODAL SYSTEM
      ========================================================== */
 
   const modal = document.getElementById("modal");
   const modalInner = document.getElementById("modalInner");
-
-  function openModal(html) {
+    function openModal(html) {
 
     if (!modal || !modalInner) return;
 
@@ -140,7 +201,9 @@ document.addEventListener("DOMContentLoaded", () => {
     modal.addEventListener("click", (event) => {
 
       if (event.target === modal) {
+
         closeModal();
+
       }
 
     });
@@ -150,7 +213,9 @@ document.addEventListener("DOMContentLoaded", () => {
   document.addEventListener("keydown", (event) => {
 
     if (event.key === "Escape") {
+
       closeModal();
+
     }
 
   });
@@ -163,19 +228,34 @@ document.addEventListener("DOMContentLoaded", () => {
 
     card.addEventListener("click", () => {
 
-      const html = `
+      const image =
+        card.dataset.image
+          ? `<img src="${card.dataset.image}" alt="">`
+          : "";
+
+      openModal(`
+        <h2>${card.dataset.title || ""}</h2>
+        ${image}
+        <p>${card.dataset.description || ""}</p>
+      `);
+
+    });
+
+  });
+
+  /* ==========================================================
+     SKILL CARD PLACEHOLDERS
+     ========================================================== */
+
+  document.querySelectorAll(".skill-card").forEach(card => {
+
+    card.addEventListener("click", () => {
+
+      openModal(`
         <h2>${card.dataset.title || ""}</h2>
 
-        ${
-          card.dataset.image
-            ? `<img src="${card.dataset.image}" alt="">`
-            : ""
-        }
-
-        <p>${card.dataset.description || ""}</p>
-      `;
-
-      openModal(html);
+        <p>Coming soon.</p>
+      `);
 
     });
 
