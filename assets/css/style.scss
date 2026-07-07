@@ -332,15 +332,18 @@ main {
 
   transform: translateY(-5px);
 
-
   border-color:
-
     var(--accent-strong);
 
-
   box-shadow:
-
     0 0 28px var(--accent-mid);
+
+}
+
+
+.video-wrapper:hover {
+
+  transform: none;
 
 }
 
