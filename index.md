@@ -24,6 +24,7 @@ layout: default
 
 </section>
 
+
 <section id="videos" class="section">
 
   <h2>Video Evidence</h2>
@@ -31,6 +32,7 @@ layout: default
   <p>
     Selected music, sound, and development work.
   </p>
+
 
   <div class="card video-wrapper">
 
@@ -43,75 +45,123 @@ layout: default
 
   </div>
 
+
   <div
     class="video-strip"
     id="videoStrip">
   </div>
+
 
   <div
     id="videoNotes"
     class="video-notes">
   </div>
 
+
 </section>
+
 
 <section id="skills" class="section">
 
   <h2>Skills</h2>
 
+
   <div class="grid">
 
-    <div class="card modal-card"
+
+    <div
+      class="card skill-card"
       data-title="Music"
-      data-description="Coming soon.">
+    >
 
       <strong>Music</strong>
 
       <div class="skill-items">
-        <div>Writing <span>•</span> Arranging</div>
-        <div>Production <span>•</span> Recording</div>
+
+        <div>
+          Writing <span>•</span> Arranging
+        </div>
+
+        <div>
+          Production <span>•</span> Recording
+        </div>
+
       </div>
 
     </div>
 
-    <div class="card modal-card"
+
+
+    <div
+      class="card skill-card"
       data-title="Audio"
-      data-description="Coming soon.">
+    >
 
       <strong>Audio</strong>
 
       <div class="skill-items">
-        <div>Design <span>•</span> Recording</div>
-        <div>Foley <span>•</span> Direction</div>
-        <div>Production</div>
+
+        <div>
+          Design <span>•</span> Recording
+        </div>
+
+        <div>
+          Foley <span>•</span> Direction
+        </div>
+
+        <div>
+          Production
+        </div>
+
       </div>
 
     </div>
 
-    <div class="card modal-card"
+
+
+    <div
+      class="card skill-card"
       data-title="Game Development"
-      data-description="Coming soon.">
+    >
 
       <strong>Game Development</strong>
 
       <div class="skill-items">
-        <div>Gameplay Design <span>•</span> Scenario Writing</div>
-        <div>Story Development <span>•</span> UX/UI</div>
-        <div>Worldbuilding</div>
-        <div>Direction <span>•</span> Production</div>
+
+        <div>
+          Gameplay Design <span>•</span> Scenario Writing
+        </div>
+
+        <div>
+          Story Development <span>•</span> UX/UI
+        </div>
+
+        <div>
+          Worldbuilding
+        </div>
+
+        <div>
+          Direction <span>•</span> Production
+        </div>
+
       </div>
 
     </div>
 
+
   </div>
 
+
 </section>
+
 
 <section id="projects" class="section">
 
   <h2>Projects</h2>
 
+
   <div class="grid">
+
 
     <div
       class="card modal-card"
@@ -123,6 +173,8 @@ layout: default
 
     </div>
 
+
+
     <div
       class="card modal-card"
       data-title="Project Two"
@@ -132,6 +184,8 @@ layout: default
       Project Two
 
     </div>
+
+
 
     <div
       class="card modal-card"
@@ -143,26 +197,25 @@ layout: default
 
     </div>
 
+
   </div>
 
+
 </section>
+
 
 <section id="contact" class="section">
 
   <h2>Contact</h2>
 
+
   <div class="card">
 
+
     <p>
-      Linktree:
-            <a
-        href="https://linktr.ee/trenthian"
-        target="_blank">
+      Email: example@email.com
+    </p>
 
-        linktree/trenthian
-
-      </a>
-      </p>
 
     <p>
 
@@ -170,7 +223,8 @@ layout: default
 
       <a
         href="https://github.com/trenthian"
-        target="_blank">
+        target="_blank"
+      >
 
         github.com/trenthian
 
@@ -178,6 +232,8 @@ layout: default
 
     </p>
 
+
   </div>
+
 
 </section>
