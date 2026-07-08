@@ -142,16 +142,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     });
 
-    strip.addEventListener("mouseleave", () => {
-
-      isDragging = false;
-
-      strip.classList.remove("dragging");
-
-      document.body.style.userSelect = "";
-
-    });
-
     strip.addEventListener("mousemove", (event) => {
 
       if (!isDragging) return;
