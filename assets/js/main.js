@@ -244,7 +244,7 @@ document.addEventListener("DOMContentLoaded", () => {
       openModal(`
         <h2>${card.dataset.title || ""}</h2>
 
-        <p>Coming soon.</p>
+        <p>Coming soon. (maybe)</p>
       `);
 
     });
